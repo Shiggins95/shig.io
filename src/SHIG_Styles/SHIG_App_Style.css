@@ -1,0 +1,15 @@
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+* #app_navbar_container {
+  height: 50px;
+  width: 100vw;
+  position: fixed;
+  top: 0;
+}
+
+/*# sourceMappingURL=SHIG_App_Style.css.map */

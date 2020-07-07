@@ -1,0 +1,30 @@
+#navbar_component {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  justify-content: flex-end;
+  width: 100%;
+  height: 100%;
+}
+#navbar_component .navbar_link {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: 200px;
+  height: 50px;
+}
+#navbar_component .navbar_link a {
+  border-bottom: 1px solid transparent;
+  color: #f9da90;
+  text-decoration: none;
+  letter-spacing: 2px;
+  font-size: 18px;
+  padding: 5px;
+}
+#navbar_component .navbar_link a:hover {
+  border-bottom: 1px solid #f9da90;
+}
+
+/*# sourceMappingURL=SHIG_NavbarComponent_Style.css.map */

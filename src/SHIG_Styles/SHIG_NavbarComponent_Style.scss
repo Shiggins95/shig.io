@@ -1,0 +1,24 @@
+@import "mixins";
+@import "variables";
+#navbar_component{
+  @include flexCenterRow;
+  justify-content: flex-end;
+  width: 100%;
+  height: 100%;
+  .navbar_link{
+    @include flexCenterRow;
+    width: 200px;
+    height: 50px;
+    a{
+      border-bottom: 1px solid transparent;
+      color: $orange_yellow;
+      text-decoration: none;
+      letter-spacing: 2px;
+      font-size: 18px;
+      padding: 5px;
+      &:hover{
+        border-bottom: 1px solid $orange_yellow;
+      }
+    }
+  }
+}

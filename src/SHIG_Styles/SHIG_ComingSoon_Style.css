@@ -1,0 +1,19 @@
+#coming_soon_container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+  background: #494949;
+}
+#coming_soon_container .shig_io {
+  padding: 25px 0 10px 0;
+  color: #abf5fb;
+}
+#coming_soon_container .coming_soon {
+  padding: 25px 0 10px 0;
+  color: #f9da90;
+}
+
+/*# sourceMappingURL=SHIG_ComingSoon_Style.css.map */
