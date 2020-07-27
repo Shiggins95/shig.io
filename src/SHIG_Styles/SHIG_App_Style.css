@@ -4,12 +4,17 @@
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
+  -ms-overflow-style: none;
+  /* IE and Edge */
+  scrollbar-width: none;
+  /* Firefox */
 }
-* #app_navbar_container {
-  height: 50px;
-  width: 100vw;
-  position: fixed;
-  top: 0;
+* ::-webkit-scrollbar {
+  display: none;
+}
+
+.App {
+  height: 100vh;
 }
 
 /*# sourceMappingURL=SHIG_App_Style.css.map */

@@ -1,0 +1,46 @@
+@import "mixins";
+@import "variables";
+#home_services_container{
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 200vh;
+  width: 100%;
+  overflow: scroll;
+  #home_services_inner_container {
+    background: $light_gray;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 200vh;
+    width: 100%;
+    z-index: 10;
+    @include flexCenterCol;
+    justify-content: flex-start;
+    .content {
+      position: sticky;
+      top: 25vh;
+      left: 10%;
+      width: 80%;
+      background: green;
+      #rendered {
+        //@include animation(content_appear, 1s, 1);
+        visibility: visible;
+      }
+      #not_rendered {
+        visibility: hidden;;
+      }
+    }
+
+  }
+}
+
+@keyframes content_appear {
+  from {
+    top: -100px;
+  }
+  to {
+    top: 0;
+  }
+}
+

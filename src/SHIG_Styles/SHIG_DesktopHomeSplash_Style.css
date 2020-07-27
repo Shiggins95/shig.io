@@ -1,0 +1,112 @@
+#splash_page_container {
+  width: 100vw;
+  height: 100vh;
+  position: relative;
+  overflow: scroll;
+}
+#splash_page_container #home_top, #splash_page_container #home_bottom {
+  position: absolute;
+  width: 100%;
+  height: 50%;
+  color: black;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+#splash_page_container #home_bottom {
+  z-index: 1;
+  bottom: 0;
+  background: #f9da90;
+}
+#splash_page_container #home_bottom .buttons {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+#splash_page_container #home_bottom .buttons button {
+  width: 250px;
+  height: 50px;
+  margin: 20px;
+  background: #494949;
+  border: none;
+  color: #f9da90;
+  letter-spacing: 2px;
+  font-weight: 600;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+}
+#splash_page_container #home_bottom .buttons button:hover {
+  cursor: pointer;
+}
+#splash_page_container #home_bottom .buttons button:focus {
+  outline: none;
+}
+#splash_page_container #home_bottom .buttons button:active {
+  outline: none;
+  -webkit-transform: translateY(1px);
+  -moz-transform: translateY(1px);
+  -ms-transform: translateY(1px);
+  -o-transform: translateY(1px);
+  transform: translateY(1px);
+}
+#splash_page_container #home_top {
+  background: rgba(0, 0, 0, 0.5);
+  -webkit-animation-name: splash_appear;
+  -moz-animation-name: splash_appear;
+  -o-animation-name: splash_appear;
+  animation-name: splash_appear;
+  -webkit-animation-duration: 0.3s;
+  -moz-animation-duration: 0.3s;
+  -o-animation-duration: 0.3s;
+  animation-duration: 0.3s;
+  -webkit-animation-iteration-count: 1;
+  -moz-animation-iteration-count: 1;
+  -o-animation-iteration-count: 1;
+  animation-iteration-count: 1;
+  color: #f9da90;
+  top: 0;
+  position: relative;
+  z-index: 1;
+}
+#splash_page_container #home_top #tsparticles {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+#splash_page_container #home_top .header {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: -100px;
+}
+#splash_page_container #home_top .header h1 {
+  font-size: 3em;
+  font-weight: 900;
+  letter-spacing: 10px;
+}
+#splash_page_container #home_top .header h2 {
+  font-size: 2em;
+  font-weight: 400;
+  letter-spacing: 2px;
+  color: #494949;
+}
+#splash_page_container #cover {
+  background: #494949;
+  position: absolute;
+}
+
+@keyframes splash_appear {
+  from {
+    top: 50%;
+  }
+  to {
+    top: 0;
+  }
+}
+
+/*# sourceMappingURL=SHIG_DesktopHomeSplash_Style.css.map */

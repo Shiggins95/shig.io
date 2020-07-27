@@ -1,0 +1,7 @@
+@import "mixins";
+@import "variables";
+#home_container{
+  @include flexCenterCol;
+  background: $light_gray;
+  width: 100vw;
+}

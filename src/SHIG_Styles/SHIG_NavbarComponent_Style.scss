@@ -1,10 +1,16 @@
 @import "mixins";
 @import "variables";
 #navbar_component{
+  z-index: 10;
+  //background: rgba(255,255,255,0.1);
+  background: transparent;
   @include flexCenterRow;
   justify-content: flex-end;
   width: 100%;
-  height: 100%;
+  height: 50px;
+  position: fixed;
+  @include animation(navbar_appear, 0.5s, 1);
+  top: 0;
   .navbar_link{
     @include flexCenterRow;
     width: 200px;
@@ -20,5 +26,21 @@
         border-bottom: 1px solid $orange_yellow;
       }
     }
+  }
+}
+
+@keyframes navbar_appear {
+  from {
+    visibility: hidden;
+    top: 0;
+    height: 50px;
+    left: 100vw;
+  }
+  to{
+    visibility: visible;
+    top: 0;
+    height: 50px;
+    width: 100%;
+    left: 0;
   }
 }

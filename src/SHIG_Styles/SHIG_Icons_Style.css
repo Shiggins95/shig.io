@@ -1,0 +1,78 @@
+.content {
+  -webkit-animation-name: appear_icons;
+  -moz-animation-name: appear_icons;
+  -o-animation-name: appear_icons;
+  animation-name: appear_icons;
+  -webkit-animation-duration: 2s;
+  -moz-animation-duration: 2s;
+  -o-animation-duration: 2s;
+  animation-duration: 2s;
+  -webkit-animation-iteration-count: 1;
+  -moz-animation-iteration-count: 1;
+  -o-animation-iteration-count: 1;
+  animation-iteration-count: 1;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  bottom: 20px;
+  position: absolute;
+}
+.content .content_box {
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+  background: #f9da90;
+  color: #494949;
+  margin: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 250px;
+  height: 150px;
+  align-items: stretch;
+}
+.content .content_box h2 {
+  text-align: center;
+  width: 100%;
+  margin-bottom: 20px;
+}
+.content .content_box .icons {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+.content .content_box .icons .fa_icon {
+  margin: 2px;
+  color: #494949;
+}
+.content .content_box .icons .people_arrows, .content .content_box .icons .speech_bubble {
+  color: rgba(73, 73, 73, 0.48);
+}
+.content .content_box .icons .speech_bubble {
+  position: absolute;
+  top: -20px;
+  left: 60px;
+}
+.content .hidden {
+  visibility: hidden;
+}
+.content .display {
+  visibility: visible;
+}
+
+@keyframes appear_icons {
+  from {
+    visibility: hidden;
+    bottom: -250px;
+  }
+  to {
+    visibility: visible;
+    bottom: 20px;
+  }
+}
+
+/*# sourceMappingURL=SHIG_Icons_Style.css.map */
