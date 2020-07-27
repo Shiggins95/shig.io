@@ -5,7 +5,7 @@ const startingState = {
   icons_bar: { 0: false, 1: false, 2: false }
 };
 
-const rendererReducer = (state = startingState, action) => {
+const rendererReducer = (state = { ...startingState }, action) => {
   const { type, newIcons } = action;
 
   switch (type) {
@@ -25,8 +25,13 @@ const rendererReducer = (state = startingState, action) => {
       return { ...state, icons_bar: newIcons };
     case 'SET_ICONS_BAR_FALSE':
       return { ...state, icons_bar: newIcons };
-    case 'REST_ALL_RENDERED_STATE':
-      return { ...startingState };
+    case 'RESET_ALL_RENDERED_STATE':
+      return {
+        splash_page: false,
+        nav_bar: false,
+        home_services: false,
+        icons_bar: { 0: false, 1: false, 2: false }
+      };
     default:
       return state;
   }

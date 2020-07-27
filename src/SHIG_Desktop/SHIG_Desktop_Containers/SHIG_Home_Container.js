@@ -14,7 +14,7 @@ class HomeContainerDesktop extends React.Component {
     return (
       <div id="home_container" ref={this.ref}>
         <SplashPage />
-        <HomeServicesComponent />
+        {/*<HomeServicesComponent />*/}
         {/*<div style={{ background: 'red', width: '100vw', height: '100vh' }}>hello</div>*/}
       </div>
     );

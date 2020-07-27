@@ -30,9 +30,10 @@ const NavbarComponentDesktop = (props) => {
   const location = useLocation();
 
   const dispatch = useDispatch();
-  const handleClick = () => {
+  const handleClick = (event) => {
+    const newPath = event.target.id;
     console.log(location.pathname);
-    if (location.pathname !== '/') {
+    if (newPath !== '/') {
       dispatch(_resetRenderedState());
     }
   };
@@ -43,13 +44,13 @@ const NavbarComponentDesktop = (props) => {
   const renderedLinks = links.map(({ link, label }) => {
     return (
       <div className="navbar_link link" key={label}>
-        <Link to={link} onClick={handleClick}>
+        <Link to={link} onClick={handleClick} id={link}>
           {label}
         </Link>
       </div>
     );
   });
-  return rendered ? <div id="navbar_component">{renderedLinks}</div> : null;
+  return rendered || location.pathname !== '/' ? <div id="navbar_component">{renderedLinks}</div> : null;
 };
 
 NavbarComponentDesktop.propTypes = {};

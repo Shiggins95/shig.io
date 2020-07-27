@@ -16,5 +16,5 @@ export const _setIconsRendered = (value, newIcons) => {
 };
 
 export const _resetRenderedState = () => {
-  return { type: 'REST_ALL_RENDERED_STATE' };
+  return { type: 'RESET_ALL_RENDERED_STATE' };
 };
