@@ -1,9 +1,9 @@
 FROM node:11.3.0 as build-deps
 WORKDIR /usr/src/app
 COPY package.json yarn.lock ./
-RUN yarn --ignore-engines
+RUN npm i --ignore-engines
 COPY . ./
-RUN yarn build
+RUN npm run build
 
 ## run build phase
 
