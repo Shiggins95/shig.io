@@ -2,7 +2,7 @@
   position: absolute;
   top: 0;
   left: 0;
-  height: 200vh;
+  height: 100vh;
   width: 100%;
   overflow: scroll;
 }
@@ -21,25 +21,25 @@
   justify-content: flex-start;
 }
 #home_services_container #home_services_inner_container .content {
-  position: sticky;
-  top: 25vh;
+  top: 10%;
   left: 10%;
-  width: 80%;
+  width: 80vw;
   background: green;
+  height: 80%;
 }
-#home_services_container #home_services_inner_container .content #rendered {
+#home_services_container #home_services_inner_container #rendered {
   visibility: visible;
 }
-#home_services_container #home_services_inner_container .content #not_rendered {
+#home_services_container #home_services_inner_container #not_rendered {
   visibility: hidden;
 }
 
 @keyframes content_appear {
   from {
-    top: -100px;
+    width: 0%;
   }
   to {
-    top: 0;
+    width: 100%;
   }
 }
 

@@ -25,8 +25,6 @@ const IconsComponent = (props) => {
   const displayClass1 = iconsRendered[1] ? 'display' : 'hidden';
   const displayClass2 = iconsRendered[2] ? 'display' : 'hidden';
   useEffect(() => {
-    debugger;
-
     if (navRendered && mounts === 0) {
       setTimeout(() => {
         for (let i = 0; i < 3; i++) {

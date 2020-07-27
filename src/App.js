@@ -8,6 +8,7 @@ import { ParallaxProvider } from 'react-scroll-parallax/cjs';
 import { _isMobile } from './SHIG_Helpers/browserDetection';
 function App() {
   const isMobile = _isMobile();
+  // const isMobile = false;
   console.log('IS MOBILE', isMobile);
   return (
     <ParallaxProvider>
@@ -15,7 +16,7 @@ function App() {
         <Router>
           {!isMobile ? <NavbarComponentDesktop /> : null}
           <Switch>
-            <Route exact path="/" component={!isMobile ? HomeContainerDesktop : null} />
+            <Route exact path="/" component={!isMobile ? HomeContainerDesktop : ComingSoonContainer} />
             <Route exact path="/contact" component={ComingSoonContainer} />
             <Route exact path="/quote" component={ComingSoonContainer} />
             <Route exact path="/services" component={ComingSoonContainer} />

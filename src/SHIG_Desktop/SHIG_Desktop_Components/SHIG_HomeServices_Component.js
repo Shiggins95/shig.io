@@ -5,18 +5,20 @@ import { Parallax } from 'react-scroll-parallax';
 
 const HomeServicesComponent = (props) => {
   const [mounts, setMounts] = useState(0);
-  const [rendered, setRendered] = useState(false);
-  // const [currentWidth, setCurrentWidth] = useState(1);
-  const containerRef = createRef();
 
   useEffect(() => {
     const handleScroll = (event) => {
+      // grab the container to pull from the side
       const el = document.querySelector('#home_services_inner_container');
+      // grab the content container to expand
+      const contentEl = document.querySelector('#home_services_content');
+      // scrolling index for determining whether to expand / collapse window
+      let currentScrollingIndex = parseInt(contentEl.getAttribute('data-scroll-index'), 10);
+      // get current width of container
       const currentWidth = parseFloat(el.style.width.split('px')[0]);
+      // if we are at the top of the screen
       if (window.scrollY === 0) {
-        console.log(window.innerWidth);
-        console.log(currentWidth);
-        // do {
+        // remove event listener if the current width is at its maximum
         if (currentWidth <= window.innerWidth && event.deltaY > 0) {
           if (currentWidth >= window.innerWidth) {
             setTimeout(() => {
@@ -24,21 +26,29 @@ const HomeServicesComponent = (props) => {
             }, 1000);
             return;
           }
+          // prevent scrolling temporarily
           event.preventDefault();
+          // set content width
+          contentEl.style.width = '80%';
+          // update container width by 20px
           el.style.width = currentWidth + 20 + 'px';
-        } else if (currentWidth > 0 && event.deltaY < 0) {
-          el.style.width = currentWidth - 20 + 'px';
+          contentEl.setAttribute('data-scroll-index', (currentScrollingIndex + 20).toString());
+        } else if (currentWidth > 0 && event.deltaY) {
+          if (currentScrollingIndex > 0) {
+            contentEl.setAttribute('data-scroll-index', (currentScrollingIndex - 20).toString());
+          }
+          if (currentScrollingIndex <= 0) {
+            el.style.width = currentWidth - 20 + 'px';
+          }
         }
-        if (rendered && currentWidth < window.innerWidth) {
-          setRendered(false);
-        }
-      }
-      if (currentWidth >= window.innerWidth) {
-        setRendered(true);
       }
     };
+
+    // initialised to check if feature is enabled
     let passiveIfSupported = false;
 
+    // if first mount, add listener to test if passive is supported and then add scroll and mousewheel listener to
+    // handle updating the side bar
     if (mounts === 0) {
       try {
         window.addEventListener(
@@ -52,32 +62,27 @@ const HomeServicesComponent = (props) => {
         );
       } catch (err) {}
       setMounts(1);
+      window.addEventListener(
+        'scroll',
+        (_event) => {
+          _event.preventDefault();
+        },
+        passiveIfSupported
+      );
     }
-    window.addEventListener(
-      'scroll',
-      (_event) => {
-        _event.preventDefault();
-      },
-      passiveIfSupported
-    );
     try {
-      // const el = document.querySelector('#home_services_inner_container');
-      // const currentWidth = parseFloat(el.style.width.split('px')[0]);
       window.addEventListener('mousewheel', handleScroll, { passive: false });
     } catch (e) {
       console.log(e);
     }
-  }, [rendered, mounts, containerRef]);
+  }, [mounts]);
 
-  console.log('REF', containerRef);
 
   return mounts ? (
     <div id="home_services_container" style={{ width: '100%' }}>
       <div id="home_services_inner_container" style={{ width: '0' }}>
-        <div className="content">
-          <h1 id={rendered ? 'rendered' : 'not_rendered'} key="renderer_me">
-            <div className="content_box">hello</div>
-          </h1>
+        <div className="content" style={{ width: '0' }} id="home_services_content" data-scroll-index="0">
+          <h1>hello</h1>
         </div>
       </div>
     </div>
