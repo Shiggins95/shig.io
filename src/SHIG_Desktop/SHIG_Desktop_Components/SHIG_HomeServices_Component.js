@@ -1,7 +1,6 @@
-import React, { useEffect, useState, createRef } from 'react';
+import React, { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 import '../../SHIG_Styles/SHIG_DesktopHomeServices_Style.scss';
-import { Parallax } from 'react-scroll-parallax';
 
 const HomeServicesComponent = (props) => {
   const [mounts, setMounts] = useState(0);
