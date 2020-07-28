@@ -1,11 +1,6 @@
 @import "mixins";
 @import "variables";
 #splash_page_container{
-  //background-attachment: scroll;
-  //background-position: center;
-  ////background-image: url("../IMG-1806.jpg");
-  //-webkit-background-size: cover;
-  //background-size: cover;
   width: 100vw;
   height: 100vh;
   position: relative;
@@ -23,9 +18,23 @@
     bottom: 0;
     background: $orange_yellow;
     .buttons{
+      height: 50px;
       @include flexCenterRow;
-      width: 100%;
+      width: 50%;
+      position: relative;
+      .appear_right {
+        @include animation(appear_right, 1s, 1);
+        right: 0;
+      }
+      .appear_center {
+        @include animation(appear_center, 1s, 1);
+      }
+      .appear_left {
+        @include animation(appear_left, 1s, 1);
+        left: 0;
+      }
       button{
+        position: absolute;
         width: 250px;
         height: 50px;
         margin: 20px;
@@ -98,4 +107,32 @@
   to {
     top: 0;
   }
+}
+
+
+@keyframes appear_right {
+    from {
+      right: -100%;
+    }
+    to {
+      right: 0;
+    }
+}
+@keyframes appear_center {
+  from {
+    top: 100%;
+  }
+  to {
+    top: -20px;
+  }
+
+}
+@keyframes appear_left {
+  from {
+    left: -100%;
+  }
+  to {
+    left: 0;
+  }
+
 }

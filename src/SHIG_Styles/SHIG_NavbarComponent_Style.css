@@ -42,15 +42,6 @@
 #navbar_component .navbar_link a:hover {
   border-bottom: 1px solid #f9da90;
 }
-#navbar_component .highlighted {
-  background: rgba(249, 218, 144, 0.75);
-  color: #494949;
-}
-#navbar_component .highlighted a {
-  color: #494949;
-  font-weight: 700;
-}
-
 @keyframes navbar_appear {
   from {
     visibility: hidden;

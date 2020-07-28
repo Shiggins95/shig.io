@@ -20,13 +20,60 @@
   background: #f9da90;
 }
 #splash_page_container #home_bottom .buttons {
+  height: 50px;
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  width: 100%;
+  width: 50%;
+  position: relative;
+}
+#splash_page_container #home_bottom .buttons .appear_right {
+  -webkit-animation-name: appear_right;
+  -moz-animation-name: appear_right;
+  -o-animation-name: appear_right;
+  animation-name: appear_right;
+  -webkit-animation-duration: 1s;
+  -moz-animation-duration: 1s;
+  -o-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-iteration-count: 1;
+  -moz-animation-iteration-count: 1;
+  -o-animation-iteration-count: 1;
+  animation-iteration-count: 1;
+  right: 0;
+}
+#splash_page_container #home_bottom .buttons .appear_center {
+  -webkit-animation-name: appear_center;
+  -moz-animation-name: appear_center;
+  -o-animation-name: appear_center;
+  animation-name: appear_center;
+  -webkit-animation-duration: 1s;
+  -moz-animation-duration: 1s;
+  -o-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-iteration-count: 1;
+  -moz-animation-iteration-count: 1;
+  -o-animation-iteration-count: 1;
+  animation-iteration-count: 1;
+}
+#splash_page_container #home_bottom .buttons .appear_left {
+  -webkit-animation-name: appear_left;
+  -moz-animation-name: appear_left;
+  -o-animation-name: appear_left;
+  animation-name: appear_left;
+  -webkit-animation-duration: 1s;
+  -moz-animation-duration: 1s;
+  -o-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-iteration-count: 1;
+  -moz-animation-iteration-count: 1;
+  -o-animation-iteration-count: 1;
+  animation-iteration-count: 1;
+  left: 0;
 }
 #splash_page_container #home_bottom .buttons button {
+  position: absolute;
   width: 250px;
   height: 50px;
   margin: 20px;
@@ -114,6 +161,30 @@
   }
   to {
     top: 0;
+  }
+}
+@keyframes appear_right {
+  from {
+    right: -100%;
+  }
+  to {
+    right: 0;
+  }
+}
+@keyframes appear_center {
+  from {
+    top: 100%;
+  }
+  to {
+    top: -20px;
+  }
+}
+@keyframes appear_left {
+  from {
+    left: -100%;
+  }
+  to {
+    left: 0;
   }
 }
 

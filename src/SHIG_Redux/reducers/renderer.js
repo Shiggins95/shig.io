@@ -24,7 +24,11 @@ const rendererReducer = (state = { ...startingState }, action) => {
     case 'SET_ICONS_BAR_TRUE':
       return { ...state, icons_bar: newIcons };
     case 'SET_ICONS_BAR_FALSE':
-      return { ...state, icons_bar: newIcons };
+      return { ...state, home_services: false };
+    case 'SET_BUTTONS_BAR_TRUE':
+      return { ...state, buttons_bar: true };
+    case 'SET_BUTTONS_BAR_FALSE':
+      return { ...state, buttons_bar: false };
     case 'RESET_ALL_RENDERED_STATE':
       return {
         splash_page: false,

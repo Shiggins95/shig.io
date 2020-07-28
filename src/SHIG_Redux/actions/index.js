@@ -14,6 +14,10 @@ export const _setIconsRendered = (value, newIcons) => {
   const type = value === true ? 'SET_ICONS_BAR_TRUE' : 'SET_ICONS_BAR_FALSE';
   return { type, newIcons };
 };
+export const _setButtonsRendered = (value) => {
+  const type = value === true ? 'SET_BUTTONS_BAR_TRUE' : 'SET_BUTTONS_BAR_FALSE';
+  return { type };
+};
 
 export const _resetRenderedState = () => {
   return { type: 'RESET_ALL_RENDERED_STATE' };

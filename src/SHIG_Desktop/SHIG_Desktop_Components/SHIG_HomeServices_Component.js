@@ -81,7 +81,7 @@ const HomeServicesComponent = (props) => {
     <div id="home_services_container" style={{ width: '100%' }}>
       <div id="home_services_inner_container" style={{ width: '0' }}>
         <div className="content" style={{ width: '0' }} id="home_services_content" data-scroll-index="0">
-          <h1>hello</h1>
+          {}
         </div>
       </div>
     </div>
