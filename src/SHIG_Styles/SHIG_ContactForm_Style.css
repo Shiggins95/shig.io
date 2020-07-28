@@ -1,0 +1,71 @@
+@import url("https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap");
+#contact_form_container {
+  width: 80vw;
+  height: 100vh;
+  position: absolute;
+  left: 20vw;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+#contact_form_container .lets_chat {
+  position: absolute;
+  left: 5vw;
+  width: 30vw;
+  height: 50%;
+}
+#contact_form_container .lets_chat h1 {
+  text-align: left;
+  font-family: "Dancing Script", cursive;
+  font-size: 9em;
+  color: #f9da90;
+  -webkit-text-fill-color: transparent;
+  -webkit-text-stroke-width: 2px;
+  -webkit-text-stroke-color: #f9da90;
+  font-weight: 900;
+}
+#contact_form_container .lets_chat h2 {
+  margin-left: 150px;
+  font-size: 50px;
+  color: #f9da90;
+}
+#contact_form_container #contact_form {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  flex-flow: row wrap;
+  position: absolute;
+  align-content: center;
+  width: 50vw;
+  left: 30vw;
+  height: 80%;
+}
+#contact_form_container #contact_form input[type=submit] {
+  width: 550px;
+  margin-top: 20px;
+  height: 50px;
+  background: #f9da90;
+  border: none;
+  cursor: pointer;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+  color: #494949;
+  letter-spacing: 2px;
+  font-weight: 900;
+}
+#contact_form_container #contact_form input[type=submit]:active {
+  outline: none;
+  -webkit-transform: translateY(1px);
+  -moz-transform: translateY(1px);
+  -ms-transform: translateY(1px);
+  -o-transform: translateY(1px);
+  transform: translateY(1px);
+}
+#contact_form_container #contact_form input[type=submit]:focus {
+  outline: none;
+}
+
+/*# sourceMappingURL=SHIG_ContactForm_Style.css.map */

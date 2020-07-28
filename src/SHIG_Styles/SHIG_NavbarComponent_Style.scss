@@ -27,13 +27,16 @@
       }
     }
   }
-  .highlighted{
-    //background: rgba(249, 218, 144, 0.75);
-    //color: $light_gray;
-    a{
-      //color: $light_gray;
-      //font-weight: 700;
-    }
+  .nav_title{
+    @include flexCenterCol;
+    width: 200px;
+    position: fixed;
+    left: 10px;
+    height: 50px;
+    color: $orange_yellow;
+    font-size: 18px;
+    letter-spacing: 2px;
+    font-weight: 500;
   }
 }
 

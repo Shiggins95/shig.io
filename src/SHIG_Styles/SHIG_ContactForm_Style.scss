@@ -1,0 +1,58 @@
+@import "mixins";
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap');
+@import "variables";
+#contact_form_container{
+  width: 80vw;
+  height: 100vh;
+  position: absolute;
+  left: 20vw;
+  @include flexCenterRow;
+  .lets_chat{
+    position: absolute;
+    left: 5vw;
+    width: 30vw;
+    height: 50%;
+    h1 {
+      text-align: left;
+      font-family: 'Dancing Script', cursive;
+      font-size: 9em;
+      color: $orange_yellow;
+      -webkit-text-fill-color: transparent;
+      -webkit-text-stroke-width: 2px;
+      -webkit-text-stroke-color: $orange_yellow;
+      font-weight: 900;
+    }
+    h2{
+      margin-left: 150px;
+      font-size: 50px;
+      color: $orange_yellow;
+    }
+  }
+  #contact_form {
+    @include flexCenterRowWrap;
+    position: absolute;
+    align-content: center;
+    width: 50vw;
+    left: 30vw;
+    height: 80%;
+    input[type="submit"] {
+      width: 550px;
+      margin-top: 20px;
+      height: 50px;
+      background: $orange_yellow;
+      border: none;
+      cursor: pointer;
+      @include borderRadius(5px);
+      color: $light_gray;
+      letter-spacing: 2px;
+      font-weight: 900;
+      &:active{
+        outline: none;
+        @include transform(translateY(1px));
+      }
+      &:focus{
+        outline: none;
+      }
+    }
+  }
+}

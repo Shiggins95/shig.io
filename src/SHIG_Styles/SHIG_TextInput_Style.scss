@@ -1,0 +1,71 @@
+@import "mixins";
+@import "variables";
+.text_input_container{
+  color: $orange_yellow;
+  letter-spacing: 1px;
+  @include flexCenterCol;
+  align-items: flex-start;
+  margin: 50px 25px 0 25px;
+  position: relative;
+  //width:
+  label{
+    font-size: 12px;
+    position: absolute;
+    top: -10px;
+  }
+  input{
+    //padding-left: 10px;
+    width: 100%;
+    margin-top: 10px;
+    padding-bottom: 5px;
+    background: $light_gray;
+    border: none;
+    border-bottom: 1px solid $orange_yellow;
+    color: $orange_yellow;
+    &:focus{
+      outline: none;
+    }
+  }
+  .visible{
+    @include animation(label_appear, 0.3s, 1);
+    //left: 10px;
+  }
+}
+
+.input_container_small{
+  width: 250px;
+}
+
+.input_container_medium{
+  width: 550px;
+}
+
+.input_container_large{
+  width: 550px;
+  label {
+    width: 100%;
+  }
+  textarea {
+    letter-spacing: 1px;
+    background: $orange_yellow;
+    height: 200px;
+    width: 100%;
+    @include borderRadius(5px);
+    @include flexCenterCol;
+    margin-top: 20px;
+    padding: 10px;
+    color: $light_gray;
+    &:focus{
+      outline: none;
+    }
+  }
+}
+
+@keyframes label_appear {
+  from {
+    top: 10px;
+  }
+  to {
+    top: -10px;
+  }
+}

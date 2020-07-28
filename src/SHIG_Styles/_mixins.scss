@@ -50,3 +50,11 @@
   transform: $transform;
 }
 
+@mixin transition($transition) {
+  -webkit-transition: $transition ease;
+  -moz-transition: $transition ease;
+  -ms-transition: $transition ease;
+  -o-transition: $transition ease;
+  transition: $transition ease;
+}
+

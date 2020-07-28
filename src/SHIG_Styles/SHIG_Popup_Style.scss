@@ -1,0 +1,86 @@
+@import "mixins";
+@import "variables";
+#popup_container{
+  @include flexCenterCol;
+  width: 100%;
+  height: 100%;
+  background: rgba(255,255,255,0.3);
+  z-index: 10;
+  .popup_content{
+    color: $light_gray;
+    letter-spacing: 1px;
+    @include animation(popup_appear, 0.2s, 1);
+    @include borderRadius(10px);
+    @include flexCenterCol;
+    justify-content: space-evenly;
+    position: absolute;
+    width: 500px;
+    height: 30vh;
+    background: $orange_yellow;
+    border: 2px solid $light_gray;
+    .header{
+      @include flexCenterCol;
+      justify-content: space-evenly;
+      position: absolute;
+      top: 15px;
+      left: 0;
+      width: 100%;
+      height: 100px;
+    }
+    .header_false{
+      h1{
+        color: $light_red;
+      }
+    }
+    .header_true{
+      h1{
+        color: $light_gray;
+      }
+    }
+    .close_container{
+      position: absolute;
+      bottom: 25px;
+      z-index: 10;
+      width: 100%;
+      @include flexCenterCol;
+      .close_content{
+        @include flexCenterCol;
+        &:hover{
+          @include transition(0.1s);
+          cursor: pointer;
+          p{
+            color: $light_red;
+            @include transition(0.1s);
+          }
+          #fa_close_button{
+            color: $light_red;
+            @include transition(0.1s);
+          }
+        }
+        p{
+          margin-bottom: 15px;
+          color: $light_gray;
+          font-weight: 900;
+          letter-spacing: 3px;
+          font-size: 11px;
+          @include transition(0.1s);
+        }
+        #fa_close_button{
+          @include transform(scale(2));
+          @include transition(0.1s);
+          color: $light_gray;
+        }
+      }
+    }
+  }
+}
+
+@keyframes popup_appear {
+  from {
+    position: absolute;
+    bottom: -500px;
+  }
+  to{
+    bottom: 35vh;
+  }
+}

@@ -1,0 +1,87 @@
+.text_input_container {
+  color: #f9da90;
+  letter-spacing: 1px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  align-items: flex-start;
+  margin: 50px 25px 0 25px;
+  position: relative;
+}
+.text_input_container label {
+  font-size: 12px;
+  position: absolute;
+  top: -10px;
+}
+.text_input_container input {
+  width: 100%;
+  margin-top: 10px;
+  padding-bottom: 5px;
+  background: #494949;
+  border: none;
+  border-bottom: 1px solid #f9da90;
+  color: #f9da90;
+}
+.text_input_container input:focus {
+  outline: none;
+}
+.text_input_container .visible {
+  -webkit-animation-name: label_appear;
+  -moz-animation-name: label_appear;
+  -o-animation-name: label_appear;
+  animation-name: label_appear;
+  -webkit-animation-duration: 0.3s;
+  -moz-animation-duration: 0.3s;
+  -o-animation-duration: 0.3s;
+  animation-duration: 0.3s;
+  -webkit-animation-iteration-count: 1;
+  -moz-animation-iteration-count: 1;
+  -o-animation-iteration-count: 1;
+  animation-iteration-count: 1;
+}
+
+.input_container_small {
+  width: 250px;
+}
+
+.input_container_medium {
+  width: 550px;
+}
+
+.input_container_large {
+  width: 550px;
+}
+.input_container_large label {
+  width: 100%;
+}
+.input_container_large textarea {
+  letter-spacing: 1px;
+  background: #f9da90;
+  height: 200px;
+  width: 100%;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+  padding: 10px;
+  color: #494949;
+}
+.input_container_large textarea:focus {
+  outline: none;
+}
+
+@keyframes label_appear {
+  from {
+    top: 10px;
+  }
+  to {
+    top: -10px;
+  }
+}
+
+/*# sourceMappingURL=SHIG_TextInput_Style.css.map */
