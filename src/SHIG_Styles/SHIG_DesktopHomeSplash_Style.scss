@@ -48,25 +48,30 @@
       }
     }
   }
+  #tsparticles{
+    position: absolute;
+    width: 100%;
+    height: 50vh;
+    z-index: 2;
+  }
   #home_top {
-    background: rgba(0,0,0,0.5);
+    background: transparent;
     @include animation(splash_appear, 0.3s, 1);
     color: $orange_yellow;
     top: 0;
     position: relative;
     z-index: 1;
-    #tsparticles{
-      position: absolute;
-      width: 100%;
-      height: 100%;
-    }
     .header {
       @include flexCenterCol;
-      margin-top: -100px;
+      margin-top: -150px;
       h1 {
-        font-size: 3em;
+        color: $orange_yellow;
+        -webkit-text-fill-color:transparent;
+        -webkit-text-stroke-width: 4px;
+        -webkit-text-stroke-color: $orange_yellow;
+        font-size: 5em;
         font-weight: 900;
-        letter-spacing: 10px;
+        letter-spacing: 35px;
       }
       h2{
         font-size: 2em;
@@ -74,6 +79,9 @@
         letter-spacing: 2px;
         color: $light_gray;
       }
+    }
+    .content{
+      z-index: 3;
     }
   }
   #cover{

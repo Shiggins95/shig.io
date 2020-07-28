@@ -12,19 +12,23 @@ const NavbarComponentDesktop = (props) => {
   const links = [
     {
       label: 'Home',
-      link: '/'
+      link: '/',
+      className: ''
     },
     {
       label: 'Contact',
-      link: '/contact'
+      link: '/contact',
+      class: ''
     },
     {
       label: 'Services',
-      link: '/services'
+      link: '/services',
+      class: ''
     },
     {
       label: 'Get a Quote',
-      link: '/quote'
+      link: '/quote',
+      className: 'highlighted'
     }
   ];
   const location = useLocation();
@@ -41,9 +45,9 @@ const NavbarComponentDesktop = (props) => {
   useEffect(() => {
     _setTimeoutTrigger(dispatch, _setNavRendered, rendered === false && splashRendered === true, true, 500);
   });
-  const renderedLinks = links.map(({ link, label }) => {
+  const renderedLinks = links.map(({ link, label, className }) => {
     return (
-      <div className="navbar_link link" key={label}>
+      <div className={`navbar_link link ${className}`} key={label}>
         <Link to={link} onClick={handleClick} id={link}>
           {label}
         </Link>

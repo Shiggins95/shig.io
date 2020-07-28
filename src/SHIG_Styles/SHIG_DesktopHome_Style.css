@@ -3,7 +3,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background: #494949;
+  background: rgba(0, 0, 0, 0.8);
   width: 100vw;
 }
 

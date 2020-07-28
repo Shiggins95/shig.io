@@ -7,13 +7,14 @@
   position: absolute;
   .content_box {
     @include borderRadius(5px);
-    background: $orange_yellow;
+    background:rgba(249, 218, 144, 0.75);
     color: $light_gray;
     margin: 20px;
     @include flexCenterCol;
     width: 250px;
     height: 150px;
     align-items: stretch;
+    z-index: 5;
 
     h2 {
       text-align: center;
