@@ -4,6 +4,7 @@ import '../../SHIG_Styles/SHIG_NavbarComponent_Style.scss';
 import { useDispatch, useSelector } from 'react-redux';
 import { _setTimeoutTrigger } from '../../SHIG_Helpers/animationHelper';
 import {
+  _resetContactFormState,
   _resetRenderedState,
   _setIconsRendered,
   _setNavbarTitle,
@@ -45,7 +46,10 @@ const NavbarComponentDesktop = (props) => {
     const newPath = event.target.id;
     let label = newPath === '/' ? '' : event.target.getAttribute('data-label');
     console.log(location.pathname);
-    if (newPath !== '/') {
+    if (location.pathname === '/contact') {
+      dispatch(_resetContactFormState());
+    }
+    if (newPath !== '/' && newPath !== location.pathname) {
       dispatch(_resetRenderedState());
     }
     dispatch(_setNavbarTitle(label));
@@ -57,7 +61,13 @@ const NavbarComponentDesktop = (props) => {
   const renderedLinks = links.map(({ link, label, className }) => {
     return (
       <div className={`navbar_link link ${className}`} key={label}>
-        <Link to={link} onClick={handleClick} id={link} data-label={label}>
+        <Link
+          to={link}
+          onClick={handleClick}
+          id={link}
+          data-label={label}
+          data-selected={location.pathname === link && location.pathname !== '/'}
+        >
           {label}
         </Link>
       </div>
@@ -65,9 +75,6 @@ const NavbarComponentDesktop = (props) => {
   });
   return rendered || location.pathname !== '/' ? (
     <div id="navbar_component">
-      {/*<div className="nav_title">*/}
-      {/*  <p>{title}</p>*/}
-      {/*</div>*/}
       {renderedLinks}
     </div>
   ) : null;

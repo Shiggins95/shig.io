@@ -14,6 +14,8 @@ import {
 } from '@fortawesome/free-solid-svg-icons';
 import { useDispatch, useSelector } from 'react-redux';
 import { _setIconsRendered } from '../../SHIG_Redux/actions';
+import IconComponent from './SHIG_Icon_Component';
+import { _setTimeoutTrigger } from '../../SHIG_Helpers/animationHelper';
 
 const IconsComponent = (props) => {
   const renderedState = useSelector((state) => state.renderer);
@@ -26,54 +28,54 @@ const IconsComponent = (props) => {
   const displayClass2 = iconsRendered[2] ? 'display' : 'hidden';
   useEffect(() => {
     if (navRendered && mounts === 0) {
-      setTimeout(() => {
-        for (let i = 0; i < 3; i++) {
-          setTimeout(() => {
-            const newState = iconsRendered;
-            newState[i] = true;
-            dispatch(_setIconsRendered(true, newState));
-            setMounts(1);
-          }, 250 * i);
-        }
-      }, 750);
+      // setTimeout(() => {
+      for (let i = 0; i < 3; i++) {
+        // setTimeout(() => {
+        const newState = iconsRendered;
+        // newState[i] = true;
+        _setTimeoutTrigger(dispatch, _setIconsRendered, true, true, 300 * i, newState, i);
+        // dispatch(_setIconsRendered(true, newState));
+        setMounts(1);
+        // }, 250 * i);
+      }
+      // }, 750);
     }
   }, [dispatch, navRendered, mounts]);
   const webDesignIcon = (
-    <div className={`content_box ${displayClass0}`}>
-      <h2>Web Design</h2>
-      <div className="icons">
-        <FontAwesomeIcon icon={faTablet} size={'3x'} className="fa_icon" />
-        <FontAwesomeIcon icon={faDesktop} size={'3x'} className="fa_icon" />
-        <FontAwesomeIcon icon={faMobile} size={'3x'} className="fa_icon" />
-      </div>
-    </div>
+    <IconComponent
+      sizing={['3x', '3x', '3x']}
+      classNames={['', '', '']}
+      icons={[faTablet, faDesktop, faMobile]}
+      displayClass={displayClass0}
+      label="Web Design"
+    />
   );
   const webHostingIcon = (
-    <div className={`content_box ${displayClass1}`}>
-      <h2>Web Hosting</h2>
-      <div className="icons">
-        <FontAwesomeIcon icon={faDesktop} size={'3x'} className="fa_icon" />
-        <FontAwesomeIcon icon={faPeopleArrows} size={'2x'} className="fa_icon people_arrows" />
-        <FontAwesomeIcon icon={faGlobe} size={'3x'} className="fa_icon" />
-      </div>
-    </div>
+    <IconComponent
+      sizing={['3x', '3x', '2x']}
+      icons={[faDesktop, faPeopleArrows, faGlobe]}
+      classNames={['', 'people_arrows', '']}
+      displayClass={displayClass1}
+      label="Web Hosting"
+    />
   );
-
   const consultationIcon = (
-    <div className={`content_box ${displayClass2}`}>
-      <h2>Consultation</h2>
-      <div className="icons">
-        <FontAwesomeIcon icon={faComments} size={'2x'} className="fa_icon speech_bubble" />
-        <FontAwesomeIcon icon={faUserCheck} size={'3x'} className="fa_icon" />
-      </div>
-    </div>
+    <IconComponent
+      sizing={['2x', '3x']}
+      icons={[faComments, faUserCheck]}
+      classNames={['speech_bubble', '']}
+      displayClass={displayClass2}
+      label="Consultation"
+    />
   );
 
   return (
     <div className="content">
-      {webDesignIcon}
-      {webHostingIcon}
-      {consultationIcon}
+      <div className="content_wrapper">
+        {webDesignIcon}
+        {webHostingIcon}
+        {consultationIcon}
+      </div>
     </div>
   );
 };

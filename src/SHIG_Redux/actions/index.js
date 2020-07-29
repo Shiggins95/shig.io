@@ -18,7 +18,10 @@ export const _setButtonsRendered = (value) => {
   const type = value === true ? 'SET_BUTTONS_BAR_TRUE' : 'SET_BUTTONS_BAR_FALSE';
   return { type };
 };
-
+export const _setServicesComponentsRendered = (value, newState) => {
+  const type = value === true ? 'SET_SERVICES_COMPONENTS_TRUE' : 'SET_SERVICES_COMPONENTS_FALSE';
+  return { type, newState };
+};
 export const _resetRenderedState = () => {
   return { type: 'RESET_ALL_RENDERED_STATE' };
 };

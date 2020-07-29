@@ -26,6 +26,9 @@
         border-bottom: 1px solid $orange_yellow;
       }
     }
+    a[data-selected="true"] {
+      border-bottom: 1px solid $orange_yellow;
+    }
   }
   .nav_title{
     @include flexCenterCol;

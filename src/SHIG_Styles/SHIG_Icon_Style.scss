@@ -1,0 +1,44 @@
+@import "mixins";
+@import "variables";
+.content_box {
+  @include borderRadius(5px);
+  background:rgba(249, 218, 144, 0.75);
+  color: $light_gray;
+  @include flexCenterCol;
+  width: 250px;
+  height: 150px;
+  align-items: stretch;
+  z-index: 5;
+
+  h2 {
+    text-align: center;
+    width: 100%;
+    margin-bottom: 20px;
+  }
+
+  .icons {
+    @include flexCenterRow;
+    position: relative;
+
+    .fa_icon {
+      margin: 2px;
+      color: $light_gray;
+    }
+    .people_arrows, .speech_bubble{
+      color: rgba(73, 73, 73, 0.48);
+    }
+    .speech_bubble{
+      position: absolute;
+      top: -20px;
+      left: 60px;
+    }
+  }
+}
+
+.hidden{
+  visibility: hidden;
+}
+
+.display{
+  visibility: visible;
+}

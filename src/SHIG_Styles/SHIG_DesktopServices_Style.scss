@@ -1,0 +1,22 @@
+@import "mixins";
+@import "variables";
+#services_container {
+  padding: 50px 0;
+  @include flexCenterRowWrap;
+  overflow-y: scroll;
+  width: 100vw;
+  height: 100vh;
+  background: $light_gray;
+  .service_component:nth-child(2n) {
+    //background: $orange_yellow;
+    .content_box{
+      margin-right: 0;
+      margin-left: 20px;
+
+    }
+    //.text_container{
+    //  flex-direction: row-reverse;
+    //}
+  }
+}
+

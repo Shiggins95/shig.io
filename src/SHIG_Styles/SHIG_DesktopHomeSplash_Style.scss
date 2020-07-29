@@ -23,14 +23,14 @@
       width: 50%;
       position: relative;
       .appear_right {
-        @include animation(appear_right, 1s, 1);
+        @include animation(appear_right, 0.5s, 1);
         right: 0;
       }
       .appear_center {
-        @include animation(appear_center, 1s, 1);
+        @include animation(appear_center, 0.5s, 1);
       }
       .appear_left {
-        @include animation(appear_left, 1s, 1);
+        @include animation(appear_left, 0.5s, 1);
         left: 0;
       }
       button{
@@ -83,10 +83,11 @@
         letter-spacing: 35px;
       }
       h2{
-        font-size: 2em;
+        font-size: 1.8em;
         font-weight: 400;
         letter-spacing: 2px;
-        color: $light_gray;
+        color: $orange_yellow;
+        opacity: .2;
       }
     }
     .content{

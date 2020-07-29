@@ -1,0 +1,85 @@
+@import "mixins";
+@import "variables";
+.service_component{
+  position: relative;
+  height: 250px;
+  width: 80%;
+  @include flexCenterRow;
+  justify-content: flex-start;
+  margin: 20px 0;
+  .animatable_left, .animatable_right{
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    @include flexCenterRow;
+  }
+  .animatable_left{
+    //@include animation(appear_service_from_left, 1s, 1);
+  }
+  .animatable_right.component_visible{
+    @include animation(appear_service_from_right, 1s, 1);
+    flex-direction: row-reverse;
+  }
+  .animatable_left.component_visible{
+    @include animation(appear_service_from_left, 1s, 1);
+  }
+  .animatable_right.component_hidden{
+    left: -200vh
+  }
+  .animatable_left.component_hidden{
+    left: 200vh;
+  }
+  a{
+    text-decoration: none;
+  }
+  .content_box {
+    height: 250px;
+    width: 400px;
+    margin-left: 0;
+    &:active{
+      @include transform(translateY(1px));
+    }
+    .fa_icon{
+      @include transform(scale(1.5));
+      margin: 20px;
+    }
+    .speech_bubble{
+      margin: 10px 0 0 50px;
+    }
+  }
+  .text_container{
+    overflow-y: scroll;
+    @include flexRow;
+    align-items: center;
+    justify-content: flex-start;
+    height: 100%;
+    width: 100%;
+    background: rgba(255,255,255,0.1);
+    @include borderRadius(5px);
+    .service_description{
+      padding: 20px;
+      //width: 80%;
+    }
+  }
+}
+
+@keyframes appear_service_from_left {
+  from {
+    left: -100vw;
+  }
+  to {
+    left: 0;
+  }
+}
+
+
+@keyframes appear_service_from_right {
+  from {
+    left: 100vw;
+  }
+  to {
+    left: 0;
+  }
+}

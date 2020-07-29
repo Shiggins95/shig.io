@@ -1,0 +1,118 @@
+.service_component {
+  position: relative;
+  height: 250px;
+  width: 80%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  justify-content: flex-start;
+  margin: 20px 0;
+}
+.service_component .animatable_left, .service_component .animatable_right {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+.service_component .animatable_right.component_visible {
+  -webkit-animation-name: appear_service_from_right;
+  -moz-animation-name: appear_service_from_right;
+  -o-animation-name: appear_service_from_right;
+  animation-name: appear_service_from_right;
+  -webkit-animation-duration: 1s;
+  -moz-animation-duration: 1s;
+  -o-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-iteration-count: 1;
+  -moz-animation-iteration-count: 1;
+  -o-animation-iteration-count: 1;
+  animation-iteration-count: 1;
+  flex-direction: row-reverse;
+}
+.service_component .animatable_left.component_visible {
+  -webkit-animation-name: appear_service_from_left;
+  -moz-animation-name: appear_service_from_left;
+  -o-animation-name: appear_service_from_left;
+  animation-name: appear_service_from_left;
+  -webkit-animation-duration: 1s;
+  -moz-animation-duration: 1s;
+  -o-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-iteration-count: 1;
+  -moz-animation-iteration-count: 1;
+  -o-animation-iteration-count: 1;
+  animation-iteration-count: 1;
+}
+.service_component .animatable_right.component_hidden {
+  left: -200vh;
+}
+.service_component .animatable_left.component_hidden {
+  left: 200vh;
+}
+.service_component a {
+  text-decoration: none;
+}
+.service_component .content_box {
+  height: 250px;
+  width: 400px;
+  margin-left: 0;
+}
+.service_component .content_box:active {
+  -webkit-transform: translateY(1px);
+  -moz-transform: translateY(1px);
+  -ms-transform: translateY(1px);
+  -o-transform: translateY(1px);
+  transform: translateY(1px);
+}
+.service_component .content_box .fa_icon {
+  -webkit-transform: scale(1.5);
+  -moz-transform: scale(1.5);
+  -ms-transform: scale(1.5);
+  -o-transform: scale(1.5);
+  transform: scale(1.5);
+  margin: 20px;
+}
+.service_component .content_box .speech_bubble {
+  margin: 10px 0 0 50px;
+}
+.service_component .text_container {
+  overflow-y: scroll;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  height: 100%;
+  width: 100%;
+  background: rgba(255, 255, 255, 0.1);
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+}
+.service_component .text_container .service_description {
+  padding: 20px;
+}
+
+@keyframes appear_service_from_left {
+  from {
+    left: -100vw;
+  }
+  to {
+    left: 0;
+  }
+}
+@keyframes appear_service_from_right {
+  from {
+    left: 100vw;
+  }
+  to {
+    left: 0;
+  }
+}
+
+/*# sourceMappingURL=SHIG_Service_Style.css.map */

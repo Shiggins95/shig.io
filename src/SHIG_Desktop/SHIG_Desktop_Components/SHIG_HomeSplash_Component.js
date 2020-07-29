@@ -39,7 +39,7 @@ const SplashPage = (props) => {
         <div id="home_top">
           <div className="header">
             <h1>SHIG</h1>
-            <h2>Delivering beautiful web journeys since 2019</h2>
+            <h2>DELIVERING BEAUTIFUL WEB JOURNEYS SINCE 2019</h2>
           </div>
           <IconsComponent />
         </div>

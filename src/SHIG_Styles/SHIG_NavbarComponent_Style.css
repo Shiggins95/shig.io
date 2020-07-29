@@ -42,6 +42,9 @@
 #navbar_component .navbar_link a:hover {
   border-bottom: 1px solid #f9da90;
 }
+#navbar_component .navbar_link a[data-selected=true] {
+  border-bottom: 1px solid #f9da90;
+}
 #navbar_component .nav_title {
   display: flex;
   flex-direction: column;

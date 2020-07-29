@@ -29,6 +29,7 @@
   margin-left: 150px;
   font-size: 50px;
   color: #f9da90;
+  opacity: 0.8;
 }
 #contact_form_container #contact_form {
   display: flex;

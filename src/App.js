@@ -6,6 +6,7 @@ import NavbarComponentDesktop from './SHIG_Desktop/SHIG_Desktop_Components/SHIG_
 import HomeContainerDesktop from './SHIG_Desktop/SHIG_Desktop_Containers/SHIG_Home_Container';
 import { _isMobile } from './SHIG_Helpers/browserDetection';
 import DesktopContactContainer from './SHIG_Desktop/SHIG_Desktop_Containers/SHIG_Contact_Container';
+import DesktopServicesContainer from './SHIG_Desktop/SHIG_Desktop_Containers/SHIG_Services_Container';
 function App() {
   const isMobile = _isMobile();
   // const isMobile = false;
@@ -16,9 +17,13 @@ function App() {
         {!isMobile ? <NavbarComponentDesktop /> : null}
         <Switch>
           <Route exact path="/" component={!isMobile ? HomeContainerDesktop : ComingSoonContainer} />
-          <Route exact path="/contact" component={DesktopContactContainer} />
+          <Route
+            exact
+            path="/contact"
+            component={!isMobile ? DesktopContactContainer : ComingSoonContainer}
+          />
           <Route exact path="/quote" component={ComingSoonContainer} />
-          <Route exact path="/services" component={ComingSoonContainer} />
+          <Route exact path="/services" component={!isMobile ? DesktopServicesContainer : ComingSoonContainer} />
         </Switch>
       </Router>
     </div>

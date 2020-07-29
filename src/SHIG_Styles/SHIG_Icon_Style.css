@@ -1,0 +1,49 @@
+.content_box {
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+  background: rgba(249, 218, 144, 0.75);
+  color: #494949;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 250px;
+  height: 150px;
+  align-items: stretch;
+  z-index: 5;
+}
+.content_box h2 {
+  text-align: center;
+  width: 100%;
+  margin-bottom: 20px;
+}
+.content_box .icons {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+.content_box .icons .fa_icon {
+  margin: 2px;
+  color: #494949;
+}
+.content_box .icons .people_arrows, .content_box .icons .speech_bubble {
+  color: rgba(73, 73, 73, 0.48);
+}
+.content_box .icons .speech_bubble {
+  position: absolute;
+  top: -20px;
+  left: 60px;
+}
+
+.hidden {
+  visibility: hidden;
+}
+
+.display {
+  visibility: visible;
+}
+
+/*# sourceMappingURL=SHIG_Icon_Style.css.map */

@@ -2,11 +2,12 @@ const startingState = {
   splash_page: false,
   nav_bar: false,
   home_services: false,
-  icons_bar: { 0: false, 1: false, 2: false }
+  icons_bar: { 0: false, 1: false, 2: false },
+  services_components: { 0: false, 1: false, 2: false }
 };
 
 const rendererReducer = (state = { ...startingState }, action) => {
-  const { type, newIcons } = action;
+  const { type, newIcons, newState } = action;
 
   switch (type) {
     case 'SET_SPLASH_PAGE_TRUE':
@@ -29,12 +30,17 @@ const rendererReducer = (state = { ...startingState }, action) => {
       return { ...state, buttons_bar: true };
     case 'SET_BUTTONS_BAR_FALSE':
       return { ...state, buttons_bar: false };
+    case 'SET_SERVICES_COMPONENTS_TRUE':
+      return { ...state, services_components: newState };
+    case 'SET_SERVICES_COMPONENTS_FALSE':
+      return { ...state, services_components: false };
     case 'RESET_ALL_RENDERED_STATE':
       return {
         splash_page: false,
         nav_bar: false,
         home_services: false,
-        icons_bar: { 0: false, 1: false, 2: false }
+        icons_bar: { 0: false, 1: false, 2: false },
+        services_components: { 0: false, 1: false, 2: false }
       };
     default:
       return state;

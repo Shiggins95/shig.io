@@ -33,10 +33,10 @@
   -moz-animation-name: appear_right;
   -o-animation-name: appear_right;
   animation-name: appear_right;
-  -webkit-animation-duration: 1s;
-  -moz-animation-duration: 1s;
-  -o-animation-duration: 1s;
-  animation-duration: 1s;
+  -webkit-animation-duration: 0.5s;
+  -moz-animation-duration: 0.5s;
+  -o-animation-duration: 0.5s;
+  animation-duration: 0.5s;
   -webkit-animation-iteration-count: 1;
   -moz-animation-iteration-count: 1;
   -o-animation-iteration-count: 1;
@@ -48,10 +48,10 @@
   -moz-animation-name: appear_center;
   -o-animation-name: appear_center;
   animation-name: appear_center;
-  -webkit-animation-duration: 1s;
-  -moz-animation-duration: 1s;
-  -o-animation-duration: 1s;
-  animation-duration: 1s;
+  -webkit-animation-duration: 0.5s;
+  -moz-animation-duration: 0.5s;
+  -o-animation-duration: 0.5s;
+  animation-duration: 0.5s;
   -webkit-animation-iteration-count: 1;
   -moz-animation-iteration-count: 1;
   -o-animation-iteration-count: 1;
@@ -62,10 +62,10 @@
   -moz-animation-name: appear_left;
   -o-animation-name: appear_left;
   animation-name: appear_left;
-  -webkit-animation-duration: 1s;
-  -moz-animation-duration: 1s;
-  -o-animation-duration: 1s;
-  animation-duration: 1s;
+  -webkit-animation-duration: 0.5s;
+  -moz-animation-duration: 0.5s;
+  -o-animation-duration: 0.5s;
+  animation-duration: 0.5s;
   -webkit-animation-iteration-count: 1;
   -moz-animation-iteration-count: 1;
   -o-animation-iteration-count: 1;
@@ -142,10 +142,11 @@
   letter-spacing: 35px;
 }
 #splash_page_container #home_top .header h2 {
-  font-size: 2em;
+  font-size: 1.8em;
   font-weight: 400;
   letter-spacing: 2px;
-  color: #494949;
+  color: #f9da90;
+  opacity: 0.2;
 }
 #splash_page_container #home_top .content {
   z-index: 3;
