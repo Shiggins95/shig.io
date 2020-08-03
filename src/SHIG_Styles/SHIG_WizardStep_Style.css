@@ -34,7 +34,7 @@
   width: 30%;
   margin: 50px 2.5% 0 2.5%;
 }
-.wizard_step #contact_form .input_container_medium {
+.wizard_step #contact_form .input_container_medium, .wizard_step #contact_form .input_container_large {
   width: 65%;
 }
 .wizard_step #contact_form input[type=submit] {

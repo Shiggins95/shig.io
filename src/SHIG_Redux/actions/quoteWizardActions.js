@@ -17,3 +17,7 @@ export const _setWizardLabels = (newLabels, currentStep, currentField) => {
 export const _resetWizardState = () => {
   return { type: 'RESET_ALL_STATE' };
 };
+
+export const _setWizardPreferredContact = (newPreferredContact) => {
+  return { type: 'SET_WIZARD_PREFERRED_CONTACT', newPreferredContact };
+};

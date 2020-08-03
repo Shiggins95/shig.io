@@ -19,7 +19,6 @@ const Months = (props) => {
     { text: 'November', id: 10 },
     { text: 'December', id: 11 }
   ];
-  console.log('CURRENT MONTH: ', currentMonth);
   return (
     <div className="months_container">
       <div className="months">

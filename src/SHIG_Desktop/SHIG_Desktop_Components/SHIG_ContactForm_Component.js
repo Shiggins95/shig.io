@@ -32,11 +32,8 @@ const ContactForm = (props) => {
   const dispatch = useDispatch();
   const [emailSent, setEmailSent] = useState(false);
   const handleChange = (event) => {
-    console.log(event.target.value);
     const rawId = event.target.id;
     const id = _capitaliseString(rawId);
-    console.log(id);
-    console.log(rawId);
     dispatch(contactFormMapping['_setContactForm' + id](event.target.value));
   };
   const handleClick = (event) => {

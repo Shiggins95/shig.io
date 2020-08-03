@@ -54,7 +54,6 @@ const ServiceComponent = (props) => {
     )
   };
   useEffect(() => {
-    debugger;
     if (mounts === 0) {
       setTimeout(() => {
         for (let i = 0; i < 3; i++) {

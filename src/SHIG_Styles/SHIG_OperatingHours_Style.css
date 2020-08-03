@@ -50,5 +50,8 @@
 #operating_hours_container .week_container .day_container p {
   margin: 2px 0;
 }
+#operating_hours_container .week_container .day_container_prev_month {
+  background: rgba(255, 255, 255, 0.01);
+}
 
 /*# sourceMappingURL=SHIG_OperatingHours_Style.css.map */

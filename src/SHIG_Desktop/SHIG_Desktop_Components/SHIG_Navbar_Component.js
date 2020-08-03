@@ -15,8 +15,6 @@ const NavbarComponentDesktop = (props) => {
   const rendererState = useSelector(({ renderer }) => renderer);
   const rendered = rendererState.nav_bar;
   const splashRendered = rendererState.splash_page;
-  const { title } = useSelector(({ navbarState }) => navbarState);
-  console.log('TITLE: ', title);
   const links = [
     {
       label: 'Home',
@@ -45,7 +43,6 @@ const NavbarComponentDesktop = (props) => {
   const handleClick = (event) => {
     const newPath = event.target.id;
     let label = newPath === '/' ? '' : event.target.getAttribute('data-label');
-    console.log(location.pathname);
     if (location.pathname === '/contact') {
       dispatch(_resetContactFormState());
     }

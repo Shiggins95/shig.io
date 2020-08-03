@@ -15,7 +15,6 @@ const PopupModal = (props) => {
       dispatch(resetFunction());
     }
   };
-  console.log('MESSGE', message);
   return (
     <div id="popup_container" className={className}>
       <div className="popup_content">

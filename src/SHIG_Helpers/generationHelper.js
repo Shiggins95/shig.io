@@ -9,14 +9,15 @@ export const generateFields = (inputs, title) => {
   };
 
   const newObj = { ...startingObj, title };
-  debugger;
   inputs.forEach((input) => {
     if (!newObj.showLabels) {
       newObj.showLabels = {};
     }
     newObj.showLabels[input.id] = input.type !== 'text';
 
-    newObj[input.id] = input.label.toUpperCase();
+    if (input.type !== 'textarea') {
+      newObj[input.id] = input.label.toUpperCase();
+    }
   });
   return newObj;
 };
@@ -34,6 +35,7 @@ export const _generateWizardStartingState = () => {
     currentStep: 0,
     direction: 'right',
     renders: 0,
+    preferredContact: 'email',
     steps: {
       0: generateFields(stepOneInputs, 'Enter Contact Information'),
       1: generateFields(stepTwoInputs, 'Enter Project Information'),

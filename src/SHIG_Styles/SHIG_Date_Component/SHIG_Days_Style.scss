@@ -3,27 +3,64 @@
 .days{
   position: absolute;
   width: 100%;
-  height: 75%;
-  top: 15%;
-  padding: 5px;
-  @include flexCenterRowWrap;
+  height: 90%;
+  top: 50px;@include flexCenterCol;
+  ._days{
+    height: 75%;
+    width: 100%;
+    top: 15%;
+    @include flexCenterRowWrap;
+    div{
+      background: rgba(255,255,255,0.1);
+      &:active{
+        @include transform(translateY(1px));
+      }
+    }
+    .day_container_prev_month, .day_container_next_month{
+      //background: rgba(255,255,255,0.01)
+      opacity: 0.5;
+    }
+    .blank{
+       //visibility: hidden;
+       background: rgba(255,255,255,0.02);
+      &:hover{
+        cursor: default;
+      }
+      &:active{
+         @include transform(translateY(0));
+       }
+     }
+  }
+  .day_labels{
+    @include flexCenterRow;
+    width: 100%;
+    div{
+      width: calc(100% / 7 - 10px);
+      //background: rgba(255,255,255,0.05);
+      background: $orange_yellow;
+      color: $light_gray;
+      font-weight: 400;
+      font-size: 0.9em;
+      letter-spacing: 3px;
+      height: 30px;
+      &:hover{
+        cursor: default;
+      }
+
+    }
+    //border-top: 1px solid $orange_yellow;
+    //border-bottom: 1px solid $orange_yellow;
+  }
   div{
     z-index: 10;
     @include flexCenterRow;
     width: calc(100% / 7 - 10px);
     height: calc(100% / 7 - 10px);
-    margin: 5px;
-    background: rgba(255,255,255,0.1);
+    margin: 0 2px;
     cursor: pointer;
     @include borderRadius(1px);
-    &:active{
-      @include transform(translateY(1px));
-    }
   }
   div[data-selected="true"] {
     border: 1px solid $orange_yellow;
-  }
-  .blank{
-    visibility: hidden;
   }
 }

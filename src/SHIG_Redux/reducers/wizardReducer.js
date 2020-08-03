@@ -4,11 +4,22 @@ import { stepOneInputs, stepThreeInputs, stepTwoInputs } from '../../SHIG_Data/w
 const { startingState, startingValues } = _generateWizardStartingState();
 
 export default (state = startingState, action) => {
-  const { type, newStep, currentStep, newLabels, currentField, value, newDirection } = action;
+  const {
+    type,
+    newStep,
+    currentStep,
+    newLabels,
+    currentField,
+    value,
+    newDirection,
+    newPreferredContact
+  } = action;
 
   switch (type) {
     case 'SET_WIZARD_STEP':
       return { ...state, currentStep: newStep };
+    case 'SET_WIZARD_PREFERRED_CONTACT':
+      return { ...state, preferredContact: newPreferredContact };
     case 'SET_WIZARD_LABELS':
       // get current value for comparison
       const currentValue = state.steps[currentStep][currentField];

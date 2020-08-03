@@ -1,0 +1,37 @@
+.preferred_checkbox {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  z-index: 10;
+  position: absolute;
+  right: 0;
+  width: 30px;
+  height: 90%;
+  padding: 5px;
+}
+.preferred_checkbox p {
+  position: absolute;
+  white-space: nowrap;
+  top: -20px;
+  font-size: 0.7em;
+}
+.preferred_checkbox .checkbox {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  color: #494949;
+  width: 70%;
+  height: 70%;
+  background: #494949;
+  border: 1px solid #f9da90;
+  cursor: pointer;
+  position: absolute;
+}
+.preferred_checkbox .checkbox[data-selected=true] {
+  background: #f9da90;
+  border: 1px solid transparent;
+}
+
+/*# sourceMappingURL=SHIG_PreferredCheckbox_Style.css.map */
