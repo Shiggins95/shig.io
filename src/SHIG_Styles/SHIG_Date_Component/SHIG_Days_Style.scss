@@ -1,0 +1,29 @@
+@import "../mixins";
+@import "../variables";
+.days{
+  position: absolute;
+  width: 100%;
+  height: 75%;
+  top: 15%;
+  padding: 5px;
+  @include flexCenterRowWrap;
+  div{
+    z-index: 10;
+    @include flexCenterRow;
+    width: calc(100% / 7 - 10px);
+    height: calc(100% / 7 - 10px);
+    margin: 5px;
+    background: rgba(255,255,255,0.1);
+    cursor: pointer;
+    @include borderRadius(1px);
+    &:active{
+      @include transform(translateY(1px));
+    }
+  }
+  div[data-selected="true"] {
+    border: 1px solid $orange_yellow;
+  }
+  .blank{
+    visibility: hidden;
+  }
+}

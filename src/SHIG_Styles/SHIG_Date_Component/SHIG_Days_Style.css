@@ -1,0 +1,42 @@
+.days {
+  position: absolute;
+  width: 100%;
+  height: 75%;
+  top: 15%;
+  padding: 5px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  flex-flow: row wrap;
+}
+.days div {
+  z-index: 10;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: calc(100% / 7 - 10px);
+  height: calc(100% / 7 - 10px);
+  margin: 5px;
+  background: rgba(255, 255, 255, 0.1);
+  cursor: pointer;
+  -webkit-border-radius: 1px;
+  -moz-border-radius: 1px;
+  border-radius: 1px;
+}
+.days div:active {
+  -webkit-transform: translateY(1px);
+  -moz-transform: translateY(1px);
+  -ms-transform: translateY(1px);
+  -o-transform: translateY(1px);
+  transform: translateY(1px);
+}
+.days div[data-selected=true] {
+  border: 1px solid #f9da90;
+}
+.days .blank {
+  visibility: hidden;
+}
+
+/*# sourceMappingURL=SHIG_Days_Style.css.map */

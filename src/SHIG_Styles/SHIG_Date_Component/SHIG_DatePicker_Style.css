@@ -1,0 +1,65 @@
+#date_picker {
+  width: 100%;
+}
+#date_picker input {
+  width: 90%;
+}
+#date_picker #fa_date_picker_icon {
+  width: 10%;
+  cursor: pointer;
+}
+#date_picker #date_picker_container {
+  background: #494949;
+  z-index: 10;
+  width: 450px;
+  height: 400px;
+  position: absolute;
+  right: 30px;
+  top: 30px;
+  border: 2px solid #f9da90;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+}
+#date_picker #date_picker_container .header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 50px;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  justify-content: space-evenly;
+}
+#date_picker #date_picker_container .header button {
+  width: 25px;
+  height: 25px;
+  background: #f9da90;
+  color: #494949;
+  position: absolute;
+  border: none;
+}
+#date_picker #date_picker_container .header button:hover {
+  cursor: pointer;
+}
+#date_picker #date_picker_container .header button:active {
+  -webkit-transform: translateY(1px);
+  -moz-transform: translateY(1px);
+  -ms-transform: translateY(1px);
+  -o-transform: translateY(1px);
+  transform: translateY(1px);
+  outline: none;
+}
+#date_picker #date_picker_container .header button:focus {
+  outline: none;
+}
+#date_picker #date_picker_container .header #prev_month {
+  left: 10px;
+}
+#date_picker #date_picker_container .header #next_month {
+  right: 10px;
+}
+
+/*# sourceMappingURL=SHIG_DatePicker_Style.css.map */

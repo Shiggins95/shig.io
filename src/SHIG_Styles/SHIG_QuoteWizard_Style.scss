@@ -1,0 +1,50 @@
+@import "mixins";
+@import "variables";
+#quote_wizard{
+  background: $light_gray;
+  position: absolute;
+  left: 20vw;
+  width: 80vw;
+  height: 80%;
+  top: 10%;
+  overflow: hidden;
+  @include flexCenterCol;
+  .navigation_buttons{
+    position: absolute;
+    bottom: 10px;
+    right: 17.5%;
+    height: 50px;
+    .button{
+      height: 100%;
+      width: 150px;
+      margin: 0 0 0 20px;
+      background: $orange_yellow;
+      border: none;
+      @include borderRadius(5px);
+      color: $light_gray;
+      font-weight: 900;
+      letter-spacing: 2px;
+      &:hover{
+        cursor: pointer;
+        opacity: 0.8;
+      }
+      &:focus{
+        outline: none;
+      }
+      &:active{
+        @include transform(translateY(1px));
+        outline: none;
+      }
+    }
+    #cancel_button{
+      background: $light_red;
+    }
+    #confirm_button{
+      background: $light_green;
+    }
+    #forward_button{
+      background: $light_green;
+    }
+  }
+
+}

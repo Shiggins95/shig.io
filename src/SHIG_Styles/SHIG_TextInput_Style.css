@@ -75,6 +75,14 @@
   outline: none;
 }
 
+#date_picker_top {
+  position: static;
+}
+#date_picker_top .label_container {
+  position: relative;
+  width: 100%;
+}
+
 @keyframes label_appear {
   from {
     top: 10px;

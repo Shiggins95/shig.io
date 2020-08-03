@@ -7,6 +7,7 @@ import HomeContainerDesktop from './SHIG_Desktop/SHIG_Desktop_Containers/SHIG_Ho
 import { _isMobile } from './SHIG_Helpers/browserDetection';
 import DesktopContactContainer from './SHIG_Desktop/SHIG_Desktop_Containers/SHIG_Contact_Container';
 import DesktopServicesContainer from './SHIG_Desktop/SHIG_Desktop_Containers/SHIG_Services_Container';
+import DesktopGetQuoteContainer from './SHIG_Desktop/SHIG_Desktop_Containers/SHIG_GetQuote_Container';
 function App() {
   const isMobile = _isMobile();
   // const isMobile = false;
@@ -22,8 +23,12 @@ function App() {
             path="/contact"
             component={!isMobile ? DesktopContactContainer : ComingSoonContainer}
           />
-          <Route exact path="/quote" component={ComingSoonContainer} />
-          <Route exact path="/services" component={!isMobile ? DesktopServicesContainer : ComingSoonContainer} />
+          <Route exact path="/quote" component={!isMobile ? DesktopGetQuoteContainer : ComingSoonContainer} />
+          <Route
+            exact
+            path="/services"
+            component={!isMobile ? DesktopServicesContainer : ComingSoonContainer}
+          />
         </Switch>
       </Router>
     </div>

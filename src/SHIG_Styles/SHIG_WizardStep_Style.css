@@ -1,0 +1,50 @@
+.wizard_step {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+.wizard_step .title {
+  color: #f9da90;
+  font-size: 1.5em;
+  font-weight: 900;
+  letter-spacing: 2px;
+  height: 50px;
+  top: 50px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  border-bottom: 2px solid #f9da90;
+}
+.wizard_step #contact_form {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  flex-flow: row wrap;
+  align-content: center;
+}
+.wizard_step #contact_form .input_container_small {
+  width: 30%;
+  margin: 50px 2.5% 0 2.5%;
+}
+.wizard_step #contact_form .input_container_medium {
+  width: 65%;
+}
+.wizard_step #contact_form input[type=submit] {
+  display: none;
+}
+.wizard_step #contact_form .react-date-picker__wrapper {
+  border: none;
+}
+.wizard_step #contact_form .date-picker input {
+  border: none;
+}
+
+/*# sourceMappingURL=SHIG_WizardStep_Style.css.map */

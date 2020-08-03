@@ -60,6 +60,14 @@
     }
   }
 }
+// to allow the popup window to be positioned against form parent
+#date_picker_top{
+  position: static;
+  .label_container{
+    position: relative;
+    width: 100%;
+  }
+}
 
 @keyframes label_appear {
   from {

@@ -1,0 +1,8 @@
+@import "mixins";
+@import "variables";
+#get_quote_container{
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  background: $light_gray;
+}

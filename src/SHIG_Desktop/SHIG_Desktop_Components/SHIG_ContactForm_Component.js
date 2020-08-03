@@ -12,6 +12,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { _capitaliseString } from '../../SHIG_Helpers/formatHelper';
 import emailJS from 'emailjs-com';
 import PopupModal from './SHIG_Popup_Component';
+import Form from './SHIG_Form_Component';
 
 const ContactForm = (props) => {
   const contactFormState = useSelector(({ contactFormReducer }) => contactFormReducer);
@@ -39,7 +40,6 @@ const ContactForm = (props) => {
     dispatch(contactFormMapping['_setContactForm' + id](event.target.value));
   };
   const handleClick = (event) => {
-    debugger;
     const rawId = event.target.id;
     const id = _capitaliseString(rawId);
     dispatch(contactFormMapping['_setContactForm' + id](''));
@@ -154,12 +154,7 @@ const ContactForm = (props) => {
         <h1>Oh, Hi</h1>
         <h2>Lets have a chat...</h2>
       </div>
-      <form id="contact_form" onSubmit={handleSubmit}>
-        {inputs.map((input) => (
-          <TextInput {...input} onChange={handleChange} key={input.id} />
-        ))}
-        <input type="submit" />
-      </form>
+      <Form handleSubmit={handleSubmit} handleChange={handleChange} inputs={inputs} />
       {showPopup ? (
         <PopupModal
           message={errorMessage}
@@ -172,6 +167,15 @@ const ContactForm = (props) => {
   );
 };
 
-ContactForm.propTypes = {};
+ContactForm.propTypes = {
+  handleSubmit: PropTypes.func,
+  handleChange: PropTypes.func,
+  resetFunction: PropTypes.func,
+  inputs: PropTypes.array,
+  showPopup: PropTypes.bool,
+  success: PropTypes.bool,
+  errorTitle: PropTypes.string,
+  errorMessage: PropTypes.string
+};
 
 export default ContactForm;

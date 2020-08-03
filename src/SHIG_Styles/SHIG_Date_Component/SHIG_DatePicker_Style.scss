@@ -1,0 +1,56 @@
+@import "../mixins";
+@import "../variables";
+#date_picker{
+  width: 100%;
+  input{
+    width: 90%;
+  }
+  #fa_date_picker_icon {
+    width: 10%;
+    cursor: pointer;
+  }
+  #date_picker_container{
+    background: $light_gray;
+    z-index: 10;
+    width: 450px;
+    height: 400px;
+    position: absolute;
+    right: 30px;
+    top: 30px;
+    border:2px solid $orange_yellow;
+    @include borderRadius(5px);
+    .header{
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 50px;
+      width: 100%;
+      @include flexCenterRow;
+      justify-content: space-evenly;
+      button{
+        width: 25px;
+        height: 25px;
+        background: $orange_yellow;
+        color: $light_gray;
+        position: absolute;
+        border: none;
+        &:hover{
+          cursor: pointer;
+        }
+        &:active{
+          @include transform(translateY(1px));
+          outline: none;
+        }
+        &:focus{
+          outline: none;
+        }
+      }
+      #prev_month{
+        left: 10px;
+      }
+      #next_month{
+        right: 10px;
+      }
+    }
+  }
+}
