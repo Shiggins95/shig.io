@@ -4,11 +4,11 @@
   position: absolute;
   width: 100%;
   height: 90%;
-  top: 50px;@include flexCenterCol;
+  top: 50px;
+  @include flexCenterCol;
   ._days{
     height: 75%;
     width: 100%;
-    top: 15%;
     @include flexCenterRowWrap;
     div{
       background: rgba(255,255,255,0.1);
@@ -46,10 +46,7 @@
       &:hover{
         cursor: default;
       }
-
     }
-    //border-top: 1px solid $orange_yellow;
-    //border-bottom: 1px solid $orange_yellow;
   }
   div{
     z-index: 10;
@@ -62,5 +59,22 @@
   }
   div[data-selected="true"] {
     border: 1px solid $orange_yellow;
+  }
+}
+
+@media (max-width: 1500px) {
+  .days{
+    height: 80%;
+    ._days{
+      padding: 0;
+      height: 80%;
+    }
+    .day_labels{
+      div{
+        height: 20px;
+        font-size: 0.8em;
+        letter-spacing: 1px;
+      }
+    }
   }
 }

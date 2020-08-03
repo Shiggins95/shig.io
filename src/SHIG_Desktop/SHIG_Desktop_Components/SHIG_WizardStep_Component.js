@@ -14,6 +14,8 @@ import {
 const WizardStep = (props) => {
   const { inputs, title } = props;
   const wizardState = useSelector((state) => state.wizardReducer);
+  const datePickerState = useSelector((state) => state.datePickerReducer);
+  const { currentDate } = datePickerState;
   const { currentStep, steps } = wizardState;
   const { showLabels } = steps[currentStep];
   const dispatch = useDispatch();
@@ -31,6 +33,12 @@ const WizardStep = (props) => {
   };
   const handleSubmit = (event) => {
     event.preventDefault();
+    console.log(wizardState);
+    console.log(currentDate);
+  };
+  // only used to stop form submitting when pressing buttons in wizard
+  const _handleSubmit = (event) => {
+    event.preventDefault();
   };
   const goLeft = () => {
     dispatch(_setWizardStep(currentStep - 1));
@@ -42,7 +50,7 @@ const WizardStep = (props) => {
   };
   const handleCancel = () => {
     dispatch(_resetWizardState());
-  }
+  };
 
   return (
     <div className="wizard_step">
@@ -51,7 +59,7 @@ const WizardStep = (props) => {
         inputs={inputs}
         handleClick={handleClick}
         handleChange={handleChange}
-        handleSubmit={handleSubmit}
+        handleSubmit={_handleSubmit}
       />
       <div className="navigation_buttons">
         {/* only show if not on first step to cancel */}
@@ -74,7 +82,7 @@ const WizardStep = (props) => {
         ) : null}
         {/* only show if on last step to finalise */}
         {currentStep === 2 ? (
-          <button id="confirm_button" className="button">
+          <button id="confirm_button" className="button" onClick={handleSubmit}>
             Make Enquiry
           </button>
         ) : null}

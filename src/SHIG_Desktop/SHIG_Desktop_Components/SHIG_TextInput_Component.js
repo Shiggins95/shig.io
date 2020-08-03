@@ -9,7 +9,7 @@ const TextInput = (props) => {
   const newProps = { id, label, type, size, value: defaultValue, onClick, onChange };
   let renderedInput = null;
   if (type === 'date') {
-    renderedInput = <DatePicker onChange={onChange} value={new Date()} className="date-picker" />;
+    renderedInput = <DatePicker onChange={onChange} value={new Date()} className="date-picker" customId={id} />;
   } else {
     renderedInput =
       type !== 'textarea' ? <input {...newProps} onFocus={onClick} /> : <textarea {...newProps} />;

@@ -24,7 +24,6 @@ export const _toggleDatePicker = () => {
 };
 
 export const _setDatePickerMultiple = (newState) => {
-  debugger;
   return {
     type: 'SET_DATE_PICKER_MULTIPLE',
     newState
@@ -32,7 +31,6 @@ export const _setDatePickerMultiple = (newState) => {
 };
 
 export const _setDatePickerView = (newCurrentView) => {
-  debugger;
   return {
     type: 'SET_DATE_PICKER_VIEW',
     newCurrentView

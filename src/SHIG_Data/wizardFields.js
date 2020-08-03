@@ -24,12 +24,6 @@ export const stepOneInputs = [
     type: 'text',
     size: 'medium',
     includeCheckbox: true
-  },
-  {
-    id: 'deadline',
-    label: 'estimated deadline',
-    type: 'date',
-    size: 'small'
   }
 ];
 export const stepTwoInputs = [
@@ -41,7 +35,7 @@ export const stepTwoInputs = [
   },
   {
     id: 'budget',
-    label: 'budget',
+    label: 'budget (£)',
     type: 'number',
     size: 'small'
   },

@@ -8,15 +8,18 @@
 }
 .months_container .months {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   justify-content: center;
   align-items: center;
-  justify-content: flex-start;
+  flex-flow: row wrap;
+  justify-content: space-evenly;
+  align-content: space-evenly;
   position: absolute;
   overflow: scroll;
   width: 100%;
-  height: 95%;
-  top: 2.5%;
+  height: 100%;
+  top: 0;
+  border: 1px solid white;
 }
 .months_container .months .month {
   -webkit-transition: 0.3s ease;
@@ -26,23 +29,28 @@
   transition: 0.3s ease;
   z-index: 9;
   cursor: pointer;
-  height: calc(100% / 12);
-  margin: 10px 0;
-  width: 100%;
+  width: 30%;
+  height: calc(100% / 4 - 10px);
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  background: rgba(255, 255, 255, 0.1);
+  font-weight: 900;
+  letter-spacing: 3px;
+  color: #f9da90;
+  border: 2px solid transparent;
 }
 .months_container .months .month:hover {
-  background: rgba(255, 255, 255, 0.1);
+  color: #494949;
+  border: 2px solid #494949;
 }
-.months_container .months .month[data-selected=true] {
-  -webkit-transform: scale(1.5);
-  -moz-transform: scale(1.5);
-  -ms-transform: scale(1.5);
-  -o-transform: scale(1.5);
-  transform: scale(1.5);
+.months_container .months .month:active {
+  -webkit-transform: translateY(1px);
+  -moz-transform: translateY(1px);
+  -ms-transform: translateY(1px);
+  -o-transform: translateY(1px);
+  transform: translateY(1px);
 }
 
 /*# sourceMappingURL=SHIG_Months_Style.css.map */

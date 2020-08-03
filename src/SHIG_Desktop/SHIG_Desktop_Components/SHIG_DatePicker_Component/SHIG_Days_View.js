@@ -4,22 +4,17 @@ import '../../../SHIG_Styles/SHIG_Date_Component/SHIG_Days_Style.css';
 import { useDispatch, useSelector } from 'react-redux';
 import moment from 'moment';
 import { _setDatePickerDays, _setDatePickerMultiple } from '../../../SHIG_Redux/actions/datePickerActions';
+import { _setWizardField } from '../../../SHIG_Redux/actions/quoteWizardActions';
 
-const Days = (props) => {
+const Days = ({ customId }) => {
   const dispatch = useDispatch();
   const datePickerState = useSelector((state) => state.datePickerReducer);
+  const wizardState = useSelector((state) => state.wizardReducer);
+  const { currentStep } = wizardState;
 
-  const [mounts, setMounts] = useState(0);
-  const { currentDate, monthDate, days } = datePickerState;
+  const { monthDate, currentDate } = datePickerState;
 
   const dayLabels = ['sun', 'mon', 'tue', 'wed', 'thu', 'fri', 'sat'];
-
-  const padDivs = (divs, start, end, key) => {
-    for (let i = start; i < end; i++) {
-      divs.push(<div className="blank" key={`blank_${key}_${i}`} />);
-    }
-  };
-
   const padDivsStart = (startingDate, startingDay, divs) => {
     // initialise new date to work with
     let newDate = moment(startingDate);
@@ -38,7 +33,7 @@ const Days = (props) => {
         <div
           className="day_container day_container_prev_month"
           key={newDate.get('date') + '_padded'}
-          data-date={newDate.format('MM-DD-YYYY')}
+          data-date={newDate.format()}
           onClick={dayClick}
           data-selected={formattedNewDate === formattedCurrentDate}
         >
@@ -66,7 +61,7 @@ const Days = (props) => {
         <div
           className="day_container day_container_next_month"
           key={newDate.get('date') + '_padded'}
-          data-date={formattedNewDate}
+          data-date={newDate.format()}
           onClick={dayClick}
           data-selected={formattedCurrentDate === formattedNewDate}
         >
@@ -79,7 +74,7 @@ const Days = (props) => {
   const dayClick = (event) => {
     const date = moment(event.target.getAttribute('data-date'));
     dispatch(_setDatePickerMultiple({ currentDate: date, monthDate: date, open: false }));
-    setMounts(0);
+    dispatch(_setWizardField(currentStep, customId, date.format('YYYY-MM-DD')));
   };
 
   const divs = [];
@@ -98,7 +93,7 @@ const Days = (props) => {
       <div
         className="day_container"
         key={day}
-        data-date={_startingDate.format('MM-DD-YYYY')}
+        data-date={_startingDate.format()}
         onClick={dayClick}
         data-selected={currentDate.get('date') === day && currentDate.get('month') === monthDate.get('month')}
       >

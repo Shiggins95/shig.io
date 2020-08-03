@@ -27,6 +27,9 @@
       width: 100%;
       @include flexCenterRow;
       justify-content: space-evenly;
+      h3{
+        cursor: pointer;
+      }
       button{
         width: 25px;
         height: 25px;
@@ -50,6 +53,40 @@
       }
       #next_month{
         right: 10px;
+      }
+      #today_button{
+        left: 75px;
+        width: 25px;
+        height: 25px;
+        color: $orange_yellow;
+        position: absolute;
+        border: none;
+        cursor: pointer;
+      }
+    }
+  }
+}
+
+@media (max-width: 1500px) {
+  #date_picker {
+    #date_picker_container {
+      width: 350px;
+      height: 300px;
+      .header{
+        font-size: 0.8em;
+        button{
+          width: 15px;
+          height: 15px;
+        }
+        #today_button{
+          left: 50px;
+          width: 15px;
+          height: 15px;
+          color: $orange_yellow;
+          position: absolute;
+          border: none;
+          cursor: pointer;
+        }
       }
     }
   }

@@ -9,28 +9,38 @@
   z-index: 10;
   position: absolute;
   .months {
-    @include flexCenterCol;
-    justify-content: flex-start;
+    @include flexCenterRowWrap;
+    justify-content: space-evenly;
+    align-content: space-evenly;
     position: absolute;
     overflow: scroll;
     width: 100%;
-    height: 95%;
-    top: 2.5%;
+    height: 100%;
+    top: 0;
+    border: 1px solid white;
     .month {
       @include transition(0.3s);
       z-index: 9;
       cursor: pointer;
-      height: calc(100% / 12);
-      margin: 10px 0;
-      width: 100%;
+      width: 30%;
+      height: calc(100% / 4 - 10px);
       @include flexCenterCol;
+      background: rgba(255,255,255,0.1);
+      font-weight: 900;
+      letter-spacing: 3px;
+      color: $orange_yellow;
+      border: 2px solid transparent;;
       &:hover{
-        background: rgba(255,255,255,0.1);
+        color: $light_gray;
+        border: 2px solid $light_gray;
+      }
+      &:active{
+        @include transform(translateY(1px));
       }
     }
 
-    .month[data-selected="true"] {
-      @include transform(scale(1.5));
-    }
+    //.month[data-selected="true"] {
+    //  @include transform(scale(1.5));
+    //}
   }
 }
