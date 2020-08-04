@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import '../../SHIG_Styles/SHIG_Icon_Style.css';
+import '../../../SHIG_Styles/SHIG_Icon_Style.css';
 
 const IconComponent = (props) => {
   const { displayClass, sizing, classNames, icons, label } = props;

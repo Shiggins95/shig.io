@@ -1,11 +1,10 @@
 import React from 'react';
-import '../../SHIG_Styles/SHIG_QuoteWizard_Style.css';
+import '../../../SHIG_Styles/SHIG_QuoteWizard_Style.css';
 import { useTransition, animated } from 'react-spring';
-import WizardStep from './SHIG_WizardStep_Component';
+import WizardStep from '../SHIG_Wizard_Components/SHIG_WizardStep_Component';
 import { useDispatch, useSelector } from 'react-redux';
-import { _resetWizardState, _setWizardDirection, _setWizardStep } from '../../SHIG_Redux/actions/quoteWizardActions';
-import { stepOneInputs, stepThreeInputs, stepTwoInputs } from '../../SHIG_Data/wizardFields';
-import { generateFields } from '../../SHIG_Helpers/generationHelper';
+import { stepOneInputs, stepThreeInputs, stepTwoInputs } from '../../../SHIG_Data/wizardFields';
+import { generateFields } from '../../../SHIG_Helpers/generationHelper';
 
 const GetQuoteWizard = () => {
   const dispatch = useDispatch();

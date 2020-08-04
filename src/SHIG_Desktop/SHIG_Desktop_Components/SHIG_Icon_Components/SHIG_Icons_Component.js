@@ -1,11 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
-import '../../SHIG_Styles/SHIG_Icons_Style.css';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import '../../../SHIG_Styles/SHIG_Icons_Style.css';
 import {
   faComments,
   faGlobe,
-  faLaptop,
   faMobile,
   faPeopleArrows,
   faTablet,
@@ -13,9 +11,9 @@ import {
   faDesktop
 } from '@fortawesome/free-solid-svg-icons';
 import { useDispatch, useSelector } from 'react-redux';
-import { _setIconsRendered } from '../../SHIG_Redux/actions';
-import IconComponent from './SHIG_Icon_Component';
-import { _setTimeoutTrigger } from '../../SHIG_Helpers/animationHelper';
+import { _setIconsRendered } from '../../../SHIG_Redux/actions';
+import IconComponent from '../SHIG_Icon_Components/SHIG_Icon_Component';
+import { _setTimeoutTrigger } from '../../../SHIG_Helpers/animationHelper';
 
 const IconsComponent = (props) => {
   const renderedState = useSelector((state) => state.renderer);

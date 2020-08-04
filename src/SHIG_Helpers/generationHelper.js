@@ -1,19 +1,12 @@
 import { stepOneInputs, stepTwoInputs, stepThreeInputs } from '../SHIG_Data/wizardFields';
 
 export const generateFields = (inputs, title) => {
-  const startingObj = {
-    errorTitle: '',
-    errorMessage: '',
-    showPopup: false,
-    success: false
-  };
-
-  const newObj = { ...startingObj, title };
+  const newObj = { title };
   inputs.forEach((input) => {
     if (!newObj.showLabels) {
       newObj.showLabels = {};
     }
-    newObj.showLabels[input.id] = input.type !== 'text';
+    newObj.showLabels[input.id] = input.type !== 'text' && input.type !== 'email';
 
     if (input.type !== 'textarea') {
       newObj[input.id] = input.label.toUpperCase();
@@ -36,6 +29,7 @@ export const _generateWizardStartingState = () => {
     direction: 'right',
     renders: 0,
     preferredContact: 'email',
+    error: { showPopup: false, errorTitle: '', errorMessage: '', success: false },
     steps: {
       0: generateFields(stepOneInputs, 'Enter Contact Information'),
       1: generateFields(stepTwoInputs, 'Enter Project Information'),

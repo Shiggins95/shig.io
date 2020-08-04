@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
-import IconComponent from './SHIG_Icon_Component';
+import IconComponent from '../SHIG_Icon_Components/SHIG_Icon_Component';
 import {
   faComments,
   faDesktop,
@@ -11,11 +11,10 @@ import {
   faTablet,
   faUserCheck
 } from '@fortawesome/free-solid-svg-icons';
-import '../../SHIG_Styles/SHIG_Service_Style.css';
-import { _splitString } from '../../SHIG_Helpers/formatHelper';
+import '../../../SHIG_Styles/SHIG_Service_Style.css';
 import { useDispatch, useSelector } from 'react-redux';
-import { _setTimeoutTrigger } from '../../SHIG_Helpers/animationHelper';
-import { _setServicesComponentsRendered } from '../../SHIG_Redux/actions';
+import { _setTimeoutTrigger } from '../../../SHIG_Helpers/animationHelper';
+import { _setServicesComponentsRendered } from '../../../SHIG_Redux/actions';
 
 const ServiceComponent = (props) => {
   const rendererState = useSelector((state) => state.renderer);

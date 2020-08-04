@@ -1,15 +1,15 @@
 import React, { useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import '../../SHIG_Styles/SHIG_NavbarComponent_Style.scss';
+import '../../../SHIG_Styles/SHIG_NavbarComponent_Style.scss';
 import { useDispatch, useSelector } from 'react-redux';
-import { _setTimeoutTrigger } from '../../SHIG_Helpers/animationHelper';
+import { _setTimeoutTrigger } from '../../../SHIG_Helpers/animationHelper';
 import {
   _resetContactFormState,
   _resetRenderedState,
   _setIconsRendered,
   _setNavbarTitle,
   _setNavRendered
-} from '../../SHIG_Redux/actions';
+} from '../../../SHIG_Redux/actions';
 
 const NavbarComponentDesktop = (props) => {
   const rendererState = useSelector(({ renderer }) => renderer);

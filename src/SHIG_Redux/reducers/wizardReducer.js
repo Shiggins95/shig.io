@@ -12,7 +12,8 @@ export default (state = startingState, action) => {
     currentField,
     value,
     newDirection,
-    newPreferredContact
+    newPreferredContact,
+    newError
   } = action;
 
   switch (type) {
@@ -46,6 +47,8 @@ export default (state = startingState, action) => {
       };
     case 'SET_WIZARD_DIRECTION':
       return { ...state, direction: newDirection };
+    case 'SET_WIZARD_ERROR':
+      return { ...state, error: newError };
     case 'RESET_ALL_STATE':
       const _startingState = _generateWizardStartingState().startingState;
       _startingState.direction = 'left';

@@ -1,16 +1,20 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import '../../SHIG_Styles/SHIG_Popup_Style.css';
+import '../../../SHIG_Styles/SHIG_Popup_Style.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTimes } from '@fortawesome/free-solid-svg-icons';
 import { useDispatch } from 'react-redux';
-import { _setContactFormError } from '../../SHIG_Redux/actions';
+import { _setContactFormError } from '../../../SHIG_Redux/actions';
 
 const PopupModal = (props) => {
-  const { title, message, className, success, resetFunction } = props;
+  const { title, message, className, success, resetFunction, callback } = props;
   const dispatch = useDispatch();
   const closePopup = () => {
-    dispatch(_setContactFormError({ errorTitle: '', errorMessage: '', showPopup: false, success: false }));
+    if (!callback) {
+      dispatch(_setContactFormError({ errorTitle: '', errorMessage: '', showPopup: false, success: false }));
+    } else {
+      callback();
+    }
     if (success) {
       dispatch(resetFunction());
     }

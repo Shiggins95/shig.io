@@ -1,12 +1,12 @@
 import React, { useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { useDispatch, useSelector } from 'react-redux';
-import { _setButtonsRendered, _setSplashRendered } from '../../SHIG_Redux/actions';
-import { _setTimeoutTrigger } from '../../SHIG_Helpers/animationHelper';
-import '../../SHIG_Styles/SHIG_DesktopHomeSplash_Style.scss';
-import IconsComponent from './SHIG_Icons_Component';
+import { _setButtonsRendered, _setSplashRendered } from '../../../SHIG_Redux/actions';
+import { _setTimeoutTrigger } from '../../../SHIG_Helpers/animationHelper';
+import '../../../SHIG_Styles/SHIG_DesktopHomeSplash_Style.scss';
+import IconsComponent from '../SHIG_Icon_Components/SHIG_Icons_Component';
 import Particles from 'react-tsparticles';
-import { particleOptions } from '../../SHIG_Helpers/particleOptions';
+import { particleOptions } from '../../../SHIG_Helpers/particleOptions';
 
 const SplashPage = (props) => {
   const rendererState = useSelector((state) => state.renderer);

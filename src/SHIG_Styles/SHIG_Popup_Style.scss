@@ -37,6 +37,12 @@
         color: $light_gray;
       }
     }
+    .message{
+      p{
+        text-align: center;
+        padding: 0 10px;
+      }
+    }
     .close_container{
       position: absolute;
       bottom: 25px;

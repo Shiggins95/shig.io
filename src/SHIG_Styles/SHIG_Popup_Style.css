@@ -55,6 +55,10 @@
 #popup_container .popup_content .header_true h1 {
   color: #494949;
 }
+#popup_container .popup_content .message p {
+  text-align: center;
+  padding: 0 10px;
+}
 #popup_container .popup_content .close_container {
   position: absolute;
   bottom: 25px;

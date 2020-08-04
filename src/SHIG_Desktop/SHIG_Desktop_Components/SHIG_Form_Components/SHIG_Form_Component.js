@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import TextInput from './SHIG_TextInput_Component';
+import TextInput from '../SHIG_Input_Components/SHIG_TextInput_Component';
 
 const Form = (props) => {
   const { inputs, handleSubmit, handleChange } = props;

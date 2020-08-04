@@ -3,27 +3,31 @@ export const stepOneInputs = [
     id: 'first_name',
     label: 'first name',
     type: 'text',
-    size: 'small'
+    size: 'small',
+    required: true
   },
   {
     id: 'last_name',
     label: 'last name',
     type: 'text',
-    size: 'small'
+    size: 'small',
+    required: true
   },
   {
     id: 'email',
     label: 'email',
-    type: 'text',
+    type: 'email',
     size: 'medium',
-    includeCheckbox: true
+    includeCheckbox: true,
+    required: true
   },
   {
     id: 'mobile',
     label: 'mobile',
     type: 'text',
     size: 'medium',
-    includeCheckbox: true
+    includeCheckbox: true,
+    required: true
   }
 ];
 export const stepTwoInputs = [
@@ -31,19 +35,22 @@ export const stepTwoInputs = [
     id: 'contact_reason',
     label: 'Project Type (e.g. small website for business or large website for multiple users)',
     type: 'text',
-    size: 'medium'
+    size: 'medium',
+    required: true
   },
   {
     id: 'budget',
     label: 'budget (£)',
     type: 'number',
-    size: 'small'
+    size: 'small',
+    required: true
   },
   {
     id: 'deadline',
     label: 'estimated deadline',
     type: 'date',
-    size: 'small'
+    size: 'small',
+    required: true
   }
 ];
 export const stepThreeInputs = [

@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import '../../SHIG_Styles/SHIG_DesktopServices_Style.css';
-import ServiceComponent from '../SHIG_Desktop_Components/SHIG_Service_Component';
+import ServiceComponent from '../SHIG_Desktop_Components/SHIG_Services_Components/SHIG_Service_Component';
 import { useSelector } from 'react-redux';
 
 const DesktopServicesContainer = (props) => {

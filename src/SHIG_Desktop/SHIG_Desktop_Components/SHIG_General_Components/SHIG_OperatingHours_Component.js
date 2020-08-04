@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import '../../SHIG_Styles/SHIG_OperatingHours_Style.css';
+import '../../../SHIG_Styles/SHIG_OperatingHours_Style.css';
 
 const OperatingHours = (props) => {
   const weekdays = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'];

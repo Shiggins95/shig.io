@@ -1,18 +1,18 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
-import '../../SHIG_Styles/SHIG_ContactForm_Style.css';
-import TextInput from './SHIG_TextInput_Component';
+import '../../../SHIG_Styles/SHIG_ContactForm_Style.css';
 import {
   _resetContactFormState,
   _setContactFormError,
   _setContactFormLabels,
   contactFormMapping
-} from '../../SHIG_Redux/actions';
+} from '../../../SHIG_Redux/actions';
 import { useDispatch, useSelector } from 'react-redux';
-import { _capitaliseString } from '../../SHIG_Helpers/formatHelper';
+import { _capitaliseString } from '../../../SHIG_Helpers/formatHelper';
 import emailJS from 'emailjs-com';
-import PopupModal from './SHIG_Popup_Component';
-import Form from './SHIG_Form_Component';
+import PopupModal from '../SHIG_Contact_Components/SHIG_Popup_Component';
+import Form from '../SHIG_Form_Components/SHIG_Form_Component';
+import { _sendEmail } from '../../../SHIG_Helpers/emailSender';
 
 const ContactForm = (props) => {
   const contactFormState = useSelector(({ contactFormReducer }) => contactFormReducer);
@@ -122,9 +122,7 @@ const ContactForm = (props) => {
         subject: subject,
         from_email: email
       };
-      emailJS.send('gmail', 'template_one', params, 'user_NZ9AngoKPS2Lb7NFOpI8I').then((res) => {
-        console.log(res);
-      });
+      _sendEmail('template_one', params);
       event.target.reset();
       setEmailSent(true);
       dispatch(

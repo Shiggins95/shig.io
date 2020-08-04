@@ -2,7 +2,7 @@ import React from 'react';
 import './SHIG_Styles/SHIG_App_Style.scss';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import ComingSoonContainer from './SHIG_Containers/SHIG_ComingSoon_Container';
-import NavbarComponentDesktop from './SHIG_Desktop/SHIG_Desktop_Components/SHIG_Navbar_Component';
+import NavbarComponentDesktop from './SHIG_Desktop/SHIG_Desktop_Components/SHIG_General_Components/SHIG_Navbar_Component';
 import HomeContainerDesktop from './SHIG_Desktop/SHIG_Desktop_Containers/SHIG_Home_Container';
 import { _isMobile } from './SHIG_Helpers/browserDetection';
 import DesktopContactContainer from './SHIG_Desktop/SHIG_Desktop_Containers/SHIG_Contact_Container';

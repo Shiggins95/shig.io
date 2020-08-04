@@ -25,4 +25,15 @@ export const _splitString = (string, newLength) => {
     currentEnd += currentEnd;
   } while (newStrings.length < newLength);
   return newStrings;
-}
+};
+
+export const _formatEmail = (body) => {
+  let emailBody = '';
+  for (const key in body) {
+    if (body.hasOwnProperty(key)) {
+      const currentValue = body[key];
+      emailBody += key + '<br/>' + currentValue + '<br/>';
+    }
+  }
+  return emailBody;
+};
