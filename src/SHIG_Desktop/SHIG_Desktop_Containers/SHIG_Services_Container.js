@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import '../../SHIG_Styles/SHIG_DesktopServices_Style.css';
 import ServiceComponent from '../SHIG_Desktop_Components/SHIG_Services_Components/SHIG_Service_Component';
 import { useSelector } from 'react-redux';
+import { servicesDescriptions } from '../../SHIG_Data/servicesDescription';
 
 const DesktopServicesContainer = (props) => {
   const rendererState = useSelector((state) => state.renderer);
@@ -12,29 +13,17 @@ const DesktopServicesContainer = (props) => {
     {
       title: 'Web Design',
       iconId: 'web_design',
-      text:
-        'The quick brown fox jumped over the lazy dog. The quick brown fox jumped over the lazy dog. The quick brown fox jumped over the lazy dog. The quick brown fox jumped over the lazy dog. The quick brown fox jumped over the lazy dog.' +
-        'The quick brown fox jumped over the lazy dog. The quick brown fox jumped over the lazy dog. The quick brown fox jumped over the lazy dog. The quick brown fox jumped over the lazy dog. The quick brown fox jumped over the lazy dog.' +
-        'The quick brown fox jumped over the lazy dog. The quick brown fox jumped over the lazy dog. The quick brown fox jumped over the lazy dog. The quick brown fox jumped over the lazy dog. The quick brown fox jumped over the lazy dog.' +
-        'The quick brown fox jumped over the lazy dog. The quick brown fox jumped over the lazy dog. The quick brown fox jumped over the lazy dog. The quick brown fox jumped over the lazy dog. The quick brown fox jumped over the lazy dog.'
+      text: servicesDescriptions.web_design
     },
     {
       title: 'Web Hosting',
       iconId: 'web_hosting',
-      text:
-        'The quick brown fox jumped over the lazy dog. The quick brown fox jumped over the lazy dog. The quick brown fox jumped over the lazy dog. The quick brown fox jumped over the lazy dog. The quick brown fox jumped over the lazy dog.' +
-        'The quick brown fox jumped over the lazy dog. The quick brown fox jumped over the lazy dog. The quick brown fox jumped over the lazy dog. The quick brown fox jumped over the lazy dog. The quick brown fox jumped over the lazy dog.' +
-        'The quick brown fox jumped over the lazy dog. The quick brown fox jumped over the lazy dog. The quick brown fox jumped over the lazy dog. The quick brown fox jumped over the lazy dog. The quick brown fox jumped over the lazy dog.' +
-        'The quick brown fox jumped over the lazy dog. The quick brown fox jumped over the lazy dog. The quick brown fox jumped over the lazy dog. The quick brown fox jumped over the lazy dog. The quick brown fox jumped over the lazy dog.'
+      text: servicesDescriptions.web_hosting
     },
     {
       title: 'Consultation / Support',
       iconId: 'consultation',
-      text:
-        'The quick brown fox jumped over the lazy dog. The quick brown fox jumped over the lazy dog. The quick brown fox jumped over the lazy dog. The quick brown fox jumped over the lazy dog. The quick brown fox jumped over the lazy dog.' +
-        'The quick brown fox jumped over the lazy dog. The quick brown fox jumped over the lazy dog. The quick brown fox jumped over the lazy dog. The quick brown fox jumped over the lazy dog. The quick brown fox jumped over the lazy dog.' +
-        'The quick brown fox jumped over the lazy dog. The quick brown fox jumped over the lazy dog. The quick brown fox jumped over the lazy dog. The quick brown fox jumped over the lazy dog. The quick brown fox jumped over the lazy dog.' +
-        'The quick brown fox jumped over the lazy dog. The quick brown fox jumped over the lazy dog. The quick brown fox jumped over the lazy dog. The quick brown fox jumped over the lazy dog. The quick brown fox jumped over the lazy dog.'
+      text: servicesDescriptions.consultation
     }
   ];
 
@@ -45,6 +34,7 @@ const DesktopServicesContainer = (props) => {
           key={service.iconId}
           {...service}
           displayClass={servicesState[index] ? 'component_visible' : 'component_hidden'}
+          index={index}
         />
       ))}
       <div className="services_mask" />

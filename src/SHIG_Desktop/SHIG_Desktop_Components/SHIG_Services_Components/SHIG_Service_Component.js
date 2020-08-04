@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import IconComponent from '../SHIG_Icon_Components/SHIG_Icon_Component';
 import {
@@ -22,7 +21,7 @@ const ServiceComponent = (props) => {
   const navBarState = rendererState.nav_bar;
   const [mounts, setMounts] = useState(0);
   const dispatch = useDispatch();
-  const { iconId, title, text, displayClass } = props;
+  const { iconId, title, text, displayClass, index } = props;
   const iconMapping = {
     web_design: (
       <IconComponent
@@ -65,12 +64,16 @@ const ServiceComponent = (props) => {
   return (
     <div className="service_component">
       <div className={`animatable_${iconId !== 'web_hosting' ? 'left' : 'right'} ${displayClass}`}>
-        <Link to={`/services/${iconId}`}>
-          <div className="icon_container">{iconMapping[iconId]}</div>
-        </Link>
+        <div className="icon_container">{iconMapping[iconId]}</div>
         <div className="text_container">
-          <div className="service_description">
-            <p>{text}</p>
+          <div className="service_description" id={`service_description_${index}`}>
+            <h2>{text.header}</h2>
+            <h3>{text.sub_header}</h3>
+            <div className="description">
+              {text.description.split('////').map((desc) => (
+                <p key={desc}>{desc}</p>
+              ))}
+            </div>
           </div>
         </div>
       </div>

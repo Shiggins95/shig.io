@@ -61,7 +61,7 @@
 .service_component .content_box {
   height: 250px;
   width: 400px;
-  margin-left: 0;
+  margin-right: 10px;
 }
 .service_component .content_box:active {
   -webkit-transform: translateY(1px);
@@ -82,20 +82,59 @@
   margin: 10px 0 0 50px;
 }
 .service_component .text_container {
-  overflow-y: scroll;
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: flex-start;
   height: 100%;
   width: 100%;
+  position: relative;
   background: rgba(255, 255, 255, 0.1);
   -webkit-border-radius: 5px;
   -moz-border-radius: 5px;
   border-radius: 5px;
 }
 .service_component .text_container .service_description {
+  height: 100%;
   padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+.service_component .text_container .service_description h2 {
+  color: #719f6b;
+  padding-bottom: 2px;
+  border-bottom: 3px solid rgba(255, 255, 255, 0.1);
+  width: 100%;
+  font-weight: 700;
+  letter-spacing: 2px;
+  padding-left: 20px;
+}
+.service_component .text_container .service_description h3 {
+  top: 40px;
+  left: 20px;
+  margin-top: 10px;
+  opacity: 0.6;
+  color: #f9da90;
+  font-weight: 700;
+  letter-spacing: 2px;
+  width: 100%;
+}
+.service_component .text_container .service_description .description {
+  height: calc(100% - 50px);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  align-items: flex-start;
+  justify-content: space-evenly;
+}
+.service_component .text_container .service_description .description p {
+  color: #f9da90;
+  font-weight: 700;
+  width: 100%;
 }
 
 @keyframes appear_service_from_left {
@@ -112,6 +151,60 @@
   }
   to {
     left: 0;
+  }
+}
+@media (max-width: 1500px) {
+  .service_component {
+    height: 300px;
+  }
+  .service_component .content_box {
+    height: 300px;
+  }
+  .service_component .text_container .service_description h2 {
+    font-size: 1.1em;
+  }
+  .service_component .text_container .service_description h3 {
+    font-size: 1em;
+    top: 25px;
+  }
+  .service_component .text_container .service_description p {
+    font-size: 0.9em;
+    font-weight: 600;
+  }
+}
+@media (max-width: 1200px) {
+  .service_component .text_container .service_description {
+    align-items: center;
+    text-align: center;
+  }
+  .service_component .text_container .service_description h2 {
+    font-size: 1.1em;
+    text-align: center;
+    padding-bottom: 5px;
+  }
+  .service_component .text_container .service_description h3 {
+    text-align: center;
+    font-size: 1em;
+    top: 60px;
+  }
+  .service_component .text_container .service_description p {
+    font-size: 0.9em;
+    font-weight: 600;
+    text-align: center;
+  }
+  .service_component .text_container #service_description_1 h2 {
+    text-align: center;
+  }
+  .service_component .text_container #service_description_1 h3 {
+    text-align: center;
+    width: 100%;
+    left: 0;
+  }
+  .service_component .text_container #service_description_1 .description {
+    align-items: flex-end;
+  }
+  .service_component .text_container #service_description_1 .description p {
+    text-align: center;
   }
 }
 

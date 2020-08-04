@@ -37,7 +37,7 @@
   .content_box {
     height: 250px;
     width: 400px;
-    margin-left: 0;
+    margin-right: 10px;
     &:active{
       @include transform(translateY(1px));
     }
@@ -50,17 +50,50 @@
     }
   }
   .text_container{
-    overflow-y: scroll;
     @include flexRow;
     align-items: center;
     justify-content: flex-start;
     height: 100%;
     width: 100%;
+    position: relative;
     background: rgba(255,255,255,0.1);
     @include borderRadius(5px);
     .service_description{
+      height: 100%;
       padding: 20px;
-      //width: 80%;
+      @include flexCenterCol;
+      text-align: center;
+      h2{
+        color: $light_green;
+        padding-bottom: 2px;
+        border-bottom: 3px solid rgba(255,255,255,0.1);
+        width: 100%;
+        font-weight: 700;
+        letter-spacing: 2px;
+        padding-left: 20px;
+      }
+      h3{
+        top: 40px;
+        left: 20px;
+        margin-top: 10px;
+        opacity: 0.6;
+        color: $orange_yellow;
+        font-weight: 700;
+        letter-spacing: 2px;
+        width: 100%;
+      }
+      .description{
+        height: calc(100% - 50px) ;
+        @include flexCenterCol;
+        align-items: flex-start;
+        justify-content: space-evenly;
+        p{
+          color: $orange_yellow;
+          font-weight: 700;
+          width: 100%;
+        }
+      }
+
     }
   }
 }
@@ -81,5 +114,71 @@
   }
   to {
     left: 0;
+  }
+}
+
+@media (max-width: 1500px) {
+  .service_component {
+    height: 300px;
+    .content_box{
+      height: 300px;
+    }
+    .text_container {
+      .service_description {
+        h2 {
+          font-size: 1.1em;
+        }
+        h3{
+          font-size: 1em;
+          top: 25px;
+        }
+        p{
+          font-size: 0.9em;
+          font-weight: 600;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 1200px) {
+  .service_component {
+    .text_container {
+      .service_description {
+        align-items: center;
+        text-align: center;
+        h2 {
+          font-size: 1.1em;
+          text-align: center;
+          padding-bottom: 5px;
+        }
+        h3{
+          text-align: center;
+          font-size: 1em;
+          top: 60px;
+        }
+        p{
+          font-size: 0.9em;
+          font-weight: 600;
+          text-align: center;
+        }
+      }
+      #service_description_1{
+        h2{
+          text-align: center;
+        }
+        h3{
+          text-align: center;
+          width: 100%;
+          left: 0;
+        }
+        .description {
+          align-items: flex-end;
+          p {
+            text-align: center;
+          }
+        }
+      }
+    }
   }
 }
