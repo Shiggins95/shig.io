@@ -156,6 +156,7 @@ const ContactForm = (props) => {
           title={errorTitle}
           success={success}
           resetFunction={_resetContactFormState}
+          showSubHeading
         />
       ) : null}
     </div>

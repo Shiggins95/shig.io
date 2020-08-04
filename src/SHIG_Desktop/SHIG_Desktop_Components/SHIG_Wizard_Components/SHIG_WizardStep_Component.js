@@ -15,6 +15,7 @@ import {
 import { _sendEmail } from '../../../SHIG_Helpers/emailSender';
 import PopupModal from '../SHIG_Contact_Components/SHIG_Popup_Component';
 import { stepOneInputs, stepThreeInputs, stepTwoInputs } from '../../../SHIG_Data/wizardFields';
+import { _validateEmail, _validatePhoneNumber } from '../../../SHIG_Helpers/validationHelper';
 
 const WizardStep = (props) => {
   const { inputs, title } = props;
@@ -44,7 +45,7 @@ const WizardStep = (props) => {
     event.preventDefault();
     console.log(wizardState);
     const validation = validateFields(inputMapping[currentStep]);
-    if (!validation) {
+    if (validation !== -1) {
       dispatch(
         _setWizardError({
           showPopup: true,
@@ -63,7 +64,7 @@ const WizardStep = (props) => {
     const { email, first_name, last_name, mobile } = contactDetails;
     const { contact_reason, budget, deadline } = projectDetails;
     const { no_of_pages, db_required, users_required, domain_purchased } = additionalDetails;
-    const actualDeadline = deadline !== 'ESTIMATED DEADLINE' ? moment(deadline) : moment();
+    const actualDeadline = moment(deadline).isValid() ? moment(deadline) : moment();
     const preferred_contact = wizardState.preferredContact;
     console.log('ACTUAL DEADLINE: ', actualDeadline);
     console.log('DEADLINE: ', deadline);
@@ -95,12 +96,34 @@ const WizardStep = (props) => {
   };
   const validateFields = (inputs) => {
     let allPresent = true;
-    inputs.forEach((input) => {
-      if (!steps[currentStep][input.id] || steps[currentStep][input.id] === input.label.toUpperCase()) {
+    let validEmail = true;
+    let validPhoneNumber = true;
+    for (let i = 0; i < inputs.length; i++) {
+      const input = inputs[i];
+      if (!input.required) {
+        continue;
+      }
+      const currentValue = steps[currentStep][input.id];
+      if (input.type === 'email') {
+        validEmail = _validateEmail(currentValue);
+      }
+      if (input.id === 'mobile') {
+        validPhoneNumber = _validatePhoneNumber(currentValue);
+      }
+      if (!currentValue || currentValue === input.label.toUpperCase()) {
         allPresent = false;
       }
-    });
-    return allPresent;
+    }
+    if (!allPresent) {
+      return 0;
+    }
+    if (!validEmail) {
+      return 1;
+    }
+    if (!validPhoneNumber) {
+      return 2;
+    }
+    return -1;
   };
   /**
    * only used to stop form submitting when pressing buttons in wizard
@@ -116,15 +139,13 @@ const WizardStep = (props) => {
   const goRight = () => {
     const validation = validateFields(inputMapping[currentStep]);
     console.log(validation);
-    if (!validation) {
-      dispatch(
-        _setWizardError({
-          showPopup: true,
-          errorTitle: 'Missing Values',
-          errorMessage: "Please enter all values marked with '*'",
-          success: false
-        })
-      );
+    const errorMapping = {
+      0: { errorTitle: 'Missing Values', errorMessage: "Please enter all values marked with '*'" },
+      1: { errorTitle: 'Invalid Email Address', errorMessage: 'Please enter a valid email address.' },
+      2: { errorTitle: 'Invalid Phone Number', errorMessage: 'Please enter a valid phone number.' }
+    };
+    if (validation !== -1) {
+      dispatch(_setWizardError({ showPopup: true, success: false, ...errorMapping[validation] }));
       return;
     }
     dispatch(_setWizardStep(currentStep + 1));
@@ -147,6 +168,7 @@ const WizardStep = (props) => {
           success={success}
           resetFunction={_resetWizardState}
           callback={closePopup}
+          showSubHeading={false}
         />
       ) : null}
       <div className="title">{title}</div>
