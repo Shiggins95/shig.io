@@ -12,10 +12,11 @@ import {
   _setWizardError,
   _setWizardStep
 } from '../../../SHIG_Redux/actions/quoteWizardActions';
-import { _sendEmail } from '../../../SHIG_Helpers/emailSender';
+import { _sendEmail, _sendEmailLocal } from '../../../SHIG_Helpers/emailSender';
 import PopupModal from '../SHIG_Contact_Components/SHIG_Popup_Component';
 import { stepOneInputs, stepThreeInputs, stepTwoInputs } from '../../../SHIG_Data/wizardFields';
 import { _validateEmail, _validatePhoneNumber } from '../../../SHIG_Helpers/validationHelper';
+import { _resetDatePickerState } from '../../../SHIG_Redux/actions/datePickerActions';
 
 const WizardStep = (props) => {
   const { inputs, title } = props;
@@ -83,7 +84,7 @@ const WizardStep = (props) => {
       domain_purchased,
       preferred_contact
     };
-    _sendEmail('template_two', params);
+    _sendEmailLocal(params);
 
     dispatch(
       _setWizardError({
@@ -137,7 +138,8 @@ const WizardStep = (props) => {
     dispatch(_setWizardDirection('left'));
   };
   const goRight = () => {
-    const validation = validateFields(inputMapping[currentStep]);
+    // const validation = validateFields(inputMapping[currentStep]);
+    const validation = -1;
     console.log(validation);
     const errorMapping = {
       0: { errorTitle: 'Missing Values', errorMessage: "Please enter all values marked with '*'" },
@@ -167,6 +169,7 @@ const WizardStep = (props) => {
           message={errorMessage}
           success={success}
           resetFunction={_resetWizardState}
+          secondaryResetFunction={_resetDatePickerState}
           callback={closePopup}
           showSubHeading={false}
         />

@@ -75,5 +75,15 @@
     left: 0;
   }
 }
+@media (max-width: 1400px) {
+  #navbar_component {
+    justify-content: center;
+  }
+}
+@media (max-width: 1100px) {
+  #navbar_component .navbar_link {
+    width: 175px;
+  }
+}
 
 /*# sourceMappingURL=SHIG_NavbarComponent_Style.css.map */

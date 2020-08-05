@@ -7,7 +7,16 @@ import { useDispatch } from 'react-redux';
 import { _setContactFormError } from '../../../SHIG_Redux/actions';
 
 const PopupModal = (props) => {
-  const { title, message, className, success, resetFunction, callback, showSubHeading } = props;
+  const {
+    title,
+    message,
+    className,
+    success,
+    resetFunction,
+    callback,
+    showSubHeading,
+    secondaryResetFunction
+  } = props;
   const dispatch = useDispatch();
   const closePopup = () => {
     if (!callback) {
@@ -17,6 +26,9 @@ const PopupModal = (props) => {
     }
     if (success) {
       dispatch(resetFunction());
+    }
+    if (secondaryResetFunction && success) {
+      dispatch(secondaryResetFunction());
     }
   };
   return (
@@ -46,6 +58,7 @@ PopupModal.propTypes = {
   className: PropTypes.string,
   success: PropTypes.bool,
   resetFunction: PropTypes.func,
+  secondaryResetFunction: PropTypes.func,
   callback: PropTypes.func,
   showSubHeading: PropTypes.bool
 };

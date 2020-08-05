@@ -18,7 +18,7 @@ export const _setWizardError = (newError) => {
 };
 
 export const _resetWizardState = () => {
-  return { type: 'RESET_ALL_STATE' };
+  return { type: 'RESET_ALL_WIZARD_STATE' };
 };
 
 export const _setWizardPreferredContact = (newPreferredContact) => {

@@ -137,3 +137,57 @@
   }
 
 }
+
+@media (min-width: 1501px) {
+  #splash_page_container{
+    margin: 0;
+    padding: 0;
+    #home_top{
+      margin: 0;
+      padding: 0;
+      .content{
+        width: 60vw;
+        .content_wrapper{
+          position: relative;
+          padding: 0 50px;
+          width: 100vw;
+          .content_box{
+            //width: 30%;
+          }
+        }
+      }
+    }
+    #home_bottom{
+      .buttons{
+        width: 60vw;
+      }
+    }
+  }
+}
+
+@media (max-width: 1500px) {
+  #splash_page_container{
+    margin: 0;
+    padding: 0;
+    #home_top{
+      margin: 0;
+      padding: 0;
+      .content{
+        width: 90vw;
+        .content_wrapper{
+          position: relative;
+          padding: 0 50px;
+          width: 100vw;
+          .content_box{
+            //width: 30%;
+          }
+        }
+      }
+    }
+    #home_bottom{
+      .buttons{
+        width: 90vw;
+      }
+    }
+  }
+}

@@ -15,15 +15,15 @@ function App() {
   return (
     <div className="App">
       <Router>
-        {!isMobile ? <NavbarComponentDesktop /> : null}
+        {!isMobile ? <NavbarComponentDesktop /> : <NavbarComponentDesktop/>}
         <Switch>
-          <Route exact path="/" component={!isMobile ? HomeContainerDesktop : ComingSoonContainer} />
+          <Route exact path="/" component={!isMobile ? HomeContainerDesktop : HomeContainerDesktop} />
           <Route
             exact
             path="/contact"
             component={!isMobile ? DesktopContactContainer : ComingSoonContainer}
           />
-          <Route exact path="/quote" component={!isMobile ? DesktopGetQuoteContainer : ComingSoonContainer} />
+          <Route exact path="/quote" component={!isMobile ? DesktopGetQuoteContainer : DesktopGetQuoteContainer} />
           <Route
             exact
             path="/services"

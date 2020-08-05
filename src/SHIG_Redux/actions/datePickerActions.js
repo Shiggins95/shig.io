@@ -37,8 +37,8 @@ export const _setDatePickerView = (newCurrentView) => {
   };
 };
 
-export const _resetDatePickerState = (newCurrentDate) => {
+export const _resetDatePickerState = () => {
   return {
-    type: 'REST_DATE_PICKER_STATE'
+    type: 'RESET_DATE_PICKER_STATE'
   };
 };

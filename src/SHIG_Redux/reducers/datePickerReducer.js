@@ -22,7 +22,7 @@ const datePickerReducer = (state = startingState, action) => {
       return { ...state, open: !state.open };
     case 'SET_DATE_PICKER_VIEW':
       return { ...state, currentView: newCurrentView };
-    case 'REST_DATE_PICKER_STATE':
+    case 'RESET_DATE_PICKER_STATE':
       return {
         days: [],
         open: false,

@@ -49,7 +49,8 @@ export default (state = startingState, action) => {
       return { ...state, direction: newDirection };
     case 'SET_WIZARD_ERROR':
       return { ...state, error: newError };
-    case 'RESET_ALL_STATE':
+    case 'RESET_ALL_WIZARD_STATE':
+      debugger;
       const _startingState = _generateWizardStartingState().startingState;
       _startingState.direction = 'left';
       return _startingState;

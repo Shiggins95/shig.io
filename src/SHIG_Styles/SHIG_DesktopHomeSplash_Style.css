@@ -188,5 +188,47 @@
     left: 0;
   }
 }
+@media (min-width: 1501px) {
+  #splash_page_container {
+    margin: 0;
+    padding: 0;
+  }
+  #splash_page_container #home_top {
+    margin: 0;
+    padding: 0;
+  }
+  #splash_page_container #home_top .content {
+    width: 60vw;
+  }
+  #splash_page_container #home_top .content .content_wrapper {
+    position: relative;
+    padding: 0 50px;
+    width: 100vw;
+  }
+  #splash_page_container #home_bottom .buttons {
+    width: 60vw;
+  }
+}
+@media (max-width: 1500px) {
+  #splash_page_container {
+    margin: 0;
+    padding: 0;
+  }
+  #splash_page_container #home_top {
+    margin: 0;
+    padding: 0;
+  }
+  #splash_page_container #home_top .content {
+    width: 90vw;
+  }
+  #splash_page_container #home_top .content .content_wrapper {
+    position: relative;
+    padding: 0 50px;
+    width: 100vw;
+  }
+  #splash_page_container #home_bottom .buttons {
+    width: 90vw;
+  }
+}
 
 /*# sourceMappingURL=SHIG_DesktopHomeSplash_Style.css.map */
