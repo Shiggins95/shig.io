@@ -72,6 +72,7 @@
     height: auto;
     top: 100vh;
     z-index: 10;
+    font-size: 0.9em;
   }
   #operating_hours_container .header {
     position: relative;
@@ -125,6 +126,12 @@
 @media (max-width: 999px) {
   #operating_hours_container .week_container .day_container {
     width: 100%;
+  }
+  #operating_hours_container .reminder_tab {
+    width: 150px;
+    font-size: 0.8em;
+    height: 30px;
+    top: -30px;
   }
 }
 
