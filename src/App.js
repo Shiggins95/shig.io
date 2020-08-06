@@ -19,10 +19,10 @@ function App() {
   return (
     <div className="App">
       <div className="rotate">
-        <h1>Please rotate your device</h1>
         <div className="animation">
-          <FontAwesomeIcon icon={faMobile} id="rotate_mobile" />
-          <FontAwesomeIcon icon={faSyncAlt} id="rotate_mobile_sync" size="3x" />
+          <h1>Please rotate your device</h1>
+          <FontAwesomeIcon icon={faMobile} id="rotate_mobile" size="2x" />
+          <FontAwesomeIcon icon={faSyncAlt} id="rotate_mobile_sync" size={'7x'} />
         </div>
       </div>
       <Router>
