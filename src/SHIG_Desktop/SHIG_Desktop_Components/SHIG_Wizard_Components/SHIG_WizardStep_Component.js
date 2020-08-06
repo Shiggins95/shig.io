@@ -187,13 +187,13 @@ const WizardStep = (props) => {
           <button id="cancel_button" className="button" onClick={handleCancel}>
             Cancel
           </button>
-        ) : null}
+        ) : <div className="blank_button"/>}
         {/* only show if not on first step to go backward */}
         {currentStep !== 0 ? (
           <button id="back_button" className="button" onClick={goLeft}>
             Back
           </button>
-        ) : null}
+        ) : <div className="blank_button"/>}
         {/* only show if not on last step to go forward */}
         {currentStep !== 2 ? (
           <button id="forwards_button" className="button" onClick={goRight}>

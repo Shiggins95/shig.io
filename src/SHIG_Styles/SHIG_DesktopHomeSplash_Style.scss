@@ -187,7 +187,24 @@
     #home_bottom{
       .buttons{
         width: 90vw;
+        @include flexCenterRow;
+        button{
+          margin: 0;
+        }
+        .appear_center{
+          @include animation(appear_center_mobile, 0.5s, 1);
+        }
       }
     }
   }
+}
+
+@keyframes appear_center_mobile {
+  from {
+    top: 200%;
+  }
+  to {
+    top: 0px;
+  }
+
 }

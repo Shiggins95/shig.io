@@ -1,3 +1,6 @@
+@import "mixins";
+@import "variables";
+
 *{
   margin: 0;
   padding: 0;
@@ -16,4 +19,133 @@
 .App{
   //overflow: scroll;
   height: 100vh;
+}
+
+.rotate{
+  width: 100%;
+  height: 100%;
+  display: none;
+}
+
+@media screen and (max-height: 500px) and (orientation: landscape) {
+  #fa_bars_menu{
+    display: none;
+  }
+  .App{
+    overflow: hidden;
+  }
+  .rotate {
+    background: $orange_yellow;
+    color: $light_gray;
+    h1{
+      position: absolute;
+      top: 0;
+    }
+    display: block;
+    z-index: 10;
+    @include flexCenterRow;
+    .animation{
+      position: relative;
+      border: 1px solid red;
+      width: 100px;
+      height: 100px;
+      @include flexCenterRow;
+      #rotate_mobile{
+        @include transform(rotate(-90deg));
+        @include animation(rotate_mobile, 4s, infinite);
+        position: absolute;
+      }
+      #rotate_mobile_sync{
+        @include transform(scale(2));
+        @include animation(rotate_mobile_sync, 4s, infinite);
+        position: absolute;
+      }
+    }
+  }
+}
+
+@keyframes rotate_mobile {
+  0%{
+    @include transform(rotate(-90deg));
+  }
+  10%{
+    @include transform(rotate(-90deg));
+  }
+  20%{
+    @include transform(rotate(0));
+  }
+  30%{
+    @include transform(rotate(0));
+  }
+  40%{
+    @include transform(rotate(-90deg));
+
+  }
+  50%{
+    @include transform(rotate(-90deg));
+
+  }
+  60%{
+    @include transform(rotate(-90deg));
+
+  }
+  70%{
+    @include transform(rotate(0));
+
+  }
+  80%{
+    @include transform(rotate(0));
+
+  }
+  90%{
+    @include transform(rotate(-90deg));
+
+  }
+  100%{
+    @include transform(rotate(-90deg));
+
+  }
+}
+
+@keyframes rotate_mobile_sync {
+  0%{
+    @include transform(rotate(-90deg) scale(2));
+  }
+  10%{
+    @include transform(rotate(-90deg) scale(2));
+  }
+  20%{
+    @include transform(rotate(0) scale(2));
+  }
+  30%{
+    @include transform(rotate(0) scale(2));
+  }
+  40%{
+    @include transform(rotate(-90deg) scale(2));
+
+  }
+  50%{
+    @include transform(rotate(-90deg) scale(2));
+
+  }
+  60%{
+    @include transform(rotate(-90deg) scale(2));
+
+  }
+  70%{
+    @include transform(rotate(0) scale(2));
+
+  }
+  80%{
+    @include transform(rotate(0) scale(2));
+
+  }
+  90%{
+    @include transform(rotate(-90deg) scale(2));
+
+  }
+  100%{
+    @include transform(rotate(-90deg) scale(2));
+
+  }
 }

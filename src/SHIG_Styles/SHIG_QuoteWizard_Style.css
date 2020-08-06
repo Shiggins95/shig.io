@@ -68,6 +68,7 @@
     margin-top: 15vh;
   }
   #quote_wizard .navigation_buttons {
+    position: absolute;
     bottom: 25vh;
     height: 30px;
   }
@@ -161,6 +162,51 @@
     height: 25px;
     position: absolute;
     right: 15px;
+  }
+}
+@media (orientation: portrait) {
+  #quote_wizard .title {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    top: 5vh;
+    text-align: center;
+  }
+  #quote_wizard .navigation_buttons {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    justify-content: center;
+    top: 12vh;
+  }
+  #quote_wizard .navigation_buttons .blank_button {
+    width: 75px;
+  }
+  #quote_wizard .navigation_buttons .button {
+    margin: 0 10px;
+  }
+}
+@media (orientation: landscape) {
+  #quote_wizard .title {
+    top: -5vh;
+  }
+}
+@media (min-width: 800px) {
+  #quote_wizard .navigation_buttons {
+    top: 80vh;
+  }
+}
+@media (max-width: 300px) {
+  #quote_wizard .title {
+    font-size: 0.8em;
+  }
+  #quote_wizard #contact_form {
+    top: 10vh;
+  }
+  #quote_wizard .navigation_buttons {
+    top: 15vh;
   }
 }
 

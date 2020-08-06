@@ -228,6 +228,35 @@
   }
   #splash_page_container #home_bottom .buttons {
     width: 90vw;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+  }
+  #splash_page_container #home_bottom .buttons button {
+    margin: 0;
+  }
+  #splash_page_container #home_bottom .buttons .appear_center {
+    -webkit-animation-name: appear_center_mobile;
+    -moz-animation-name: appear_center_mobile;
+    -o-animation-name: appear_center_mobile;
+    animation-name: appear_center_mobile;
+    -webkit-animation-duration: 0.5s;
+    -moz-animation-duration: 0.5s;
+    -o-animation-duration: 0.5s;
+    animation-duration: 0.5s;
+    -webkit-animation-iteration-count: 1;
+    -moz-animation-iteration-count: 1;
+    -o-animation-iteration-count: 1;
+    animation-iteration-count: 1;
+  }
+}
+@keyframes appear_center_mobile {
+  from {
+    top: 200%;
+  }
+  to {
+    top: 0px;
   }
 }
 

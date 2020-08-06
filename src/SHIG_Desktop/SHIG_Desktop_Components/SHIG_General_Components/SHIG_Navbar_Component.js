@@ -80,7 +80,7 @@ const NavbarComponentDesktop = (props) => {
   });
   if (isMobile) {
     return (
-      <div id="navbar_component_mobile">
+      <div id={show ? 'navbar_component_mobile' : 'navbar_component_mobile_hidden'}>
         {
           <FontAwesomeIcon
             icon={faBars}
