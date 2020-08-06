@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import '../../../SHIG_Styles/SHIG_NavbarComponent_Style.scss';
 import { useDispatch, useSelector } from 'react-redux';
@@ -10,11 +10,16 @@ import {
   _setNavbarTitle,
   _setNavRendered
 } from '../../../SHIG_Redux/actions';
+import { _isMobile } from '../../../SHIG_Helpers/browserDetection';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faBars } from '@fortawesome/free-solid-svg-icons';
 
 const NavbarComponentDesktop = (props) => {
+  const isMobile = _isMobile();
   const rendererState = useSelector(({ renderer }) => renderer);
   const rendered = rendererState.nav_bar;
   const splashRendered = rendererState.splash_page;
+  const [show, setShow] = useState(false);
   const links = [
     {
       label: 'Home',
@@ -50,6 +55,9 @@ const NavbarComponentDesktop = (props) => {
       dispatch(_resetRenderedState());
     }
     dispatch(_setNavbarTitle(label));
+    if (isMobile && show) {
+      setShow(false);
+    }
   };
 
   useEffect(() => {
@@ -70,10 +78,23 @@ const NavbarComponentDesktop = (props) => {
       </div>
     );
   });
+  if (isMobile) {
+    return (
+      <div id="navbar_component_mobile">
+        {
+          <FontAwesomeIcon
+            icon={faBars}
+            id="fa_bars_menu"
+            onClick={() => setShow(!show)}
+            style={{ color: show ? '#494949' : 'rgb(249, 218, 144)' }}
+          />
+        }
+        {show ? <div className="navbar_links">{renderedLinks}</div> : null}
+      </div>
+    );
+  }
   return rendered || location.pathname !== '/' ? (
-    <div id="navbar_component">
-      {renderedLinks}
-    </div>
+    <div id={isMobile ? 'navbar_component_mobile' : 'navbar_component'}>{renderedLinks}</div>
   ) : null;
 };
 
