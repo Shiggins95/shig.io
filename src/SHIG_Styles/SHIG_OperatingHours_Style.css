@@ -26,11 +26,19 @@
 }
 #operating_hours_container .week_container {
   width: 90%;
+  padding: 20px;
+}
+#operating_hours_container .week_container .weekday {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 20px;
+}
+#operating_hours_container .week_container .weekend {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 #operating_hours_container .week_container .day_container {
   margin: 5px 0;
@@ -52,6 +60,72 @@
 }
 #operating_hours_container .week_container .day_container_prev_month {
   background: rgba(255, 255, 255, 0.01);
+}
+#operating_hours_container .reminder_tab {
+  display: none;
+}
+
+@media (max-width: 1300px) {
+  #operating_hours_container {
+    position: absolute;
+    width: 100vw;
+    height: auto;
+    top: 100vh;
+    z-index: 10;
+  }
+  #operating_hours_container .header {
+    position: relative;
+    height: 50px;
+  }
+  #operating_hours_container .header p {
+    margin-top: 0;
+  }
+  #operating_hours_container .week_container {
+    margin-top: 20px;
+  }
+  #operating_hours_container .week_container .weekday {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    flex-flow: row wrap;
+    justify-content: space-evenly;
+  }
+  #operating_hours_container .week_container .weekend {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    flex-flow: row wrap;
+    justify-content: space-evenly;
+  }
+  #operating_hours_container .week_container .day_container {
+    width: 40%;
+  }
+  #operating_hours_container .reminder_tab {
+    display: block;
+    position: absolute;
+    top: -50px;
+    left: 0;
+    width: 200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: #f9da90;
+    height: 50px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    color: #494949;
+    -webkit-border-radius: 5px 5px 0 0;
+    -moz-border-radius: 5px 5px 0 0;
+    border-radius: 5px 5px 0 0;
+  }
+}
+@media (max-width: 999px) {
+  #operating_hours_container .week_container .day_container {
+    width: 100%;
+  }
 }
 
 /*# sourceMappingURL=SHIG_OperatingHours_Style.css.map */

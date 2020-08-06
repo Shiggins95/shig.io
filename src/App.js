@@ -21,13 +21,13 @@ function App() {
           <Route
             exact
             path="/contact"
-            component={!isMobile ? DesktopContactContainer : ComingSoonContainer}
+            component={!isMobile ? DesktopContactContainer : DesktopContactContainer}
           />
           <Route exact path="/quote" component={!isMobile ? DesktopGetQuoteContainer : DesktopGetQuoteContainer} />
           <Route
             exact
             path="/services"
-            component={!isMobile ? DesktopServicesContainer : ComingSoonContainer}
+            component={!isMobile ? DesktopServicesContainer : DesktopServicesContainer}
           />
         </Switch>
       </Router>

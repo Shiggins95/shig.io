@@ -21,8 +21,13 @@
   }
   .week_container{
     width: 90%;
-    @include flexCenterCol;
     padding: 20px;
+    .weekday{
+      @include flexCenterCol;
+    }
+    .weekend{
+      @include flexCenterCol;
+    }
     .day_container{
       margin: 5px 0;
       letter-spacing: 1px;
@@ -43,6 +48,67 @@
     }
     .day_container_prev_month{
       background: rgba(255,255,255,0.01);
+    }
+  }
+  .reminder_tab{
+    display: none;
+  }
+}
+
+@media (max-width: 1300px) {
+
+  #operating_hours_container{
+    position: absolute;
+    width: 100vw;
+    height: auto;
+    top: 100vh;
+    z-index: 10;
+    .header{
+      position: relative;
+      height: 50px;
+      p{
+        margin-top: 0;
+      }
+    }
+    .week_container{
+      margin-top: 20px;
+      //flex-direction: row-reverse;
+      .weekday{
+        @include flexCenterRowWrap;
+        justify-content: space-evenly;
+      }
+      .weekend{
+        @include flexCenterRowWrap;
+        justify-content: space-evenly;
+      }
+      .day_container{
+        width: 40%;
+      }
+    }
+    .reminder_tab{
+      display: block;
+      position: absolute;
+      top: -50px;
+      left: 0;
+      width: 200px;
+      @include flexCenterCol;
+      background: $orange_yellow;
+      height: 50px;
+      font-weight: 700;
+      letter-spacing: 1px;
+      color: $light_gray;
+      @include borderRadius(5px 5px 0 0);
+    }
+  }
+
+}
+
+@media (max-width: 999px) {
+  #operating_hours_container{
+    .week_container{
+      .day_container{
+        width: 100%;
+      }
     }
   }
 }

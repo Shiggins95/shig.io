@@ -50,3 +50,37 @@
   }
 
 }
+
+@media (max-width: 1300px) {
+
+  #quote_wizard{
+    width: 80vw;
+    left: 10vw;
+    height: 100vh;
+    top: 0;
+    .title {
+      margin-top: 25vh;
+    }
+    .navigation_buttons{
+      bottom: 25vh;
+      height: 30px;
+      .button{
+        width: 100px;
+        font-size: 0.6em;
+      }
+    }
+    label {
+      font-size: 0.7em;
+    }
+    input {
+      margin-top: 20px;
+      font-size: 0.7em;
+    }
+  }
+
+
+}
+
+@media (max-width: 999px) {
+
+}
