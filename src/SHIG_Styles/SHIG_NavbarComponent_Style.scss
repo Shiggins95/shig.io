@@ -104,16 +104,13 @@
 }
 
 @media (max-width: 1400px) {
-  #navbar_component{
-    justify-content: center;
-  }
   #navbar_component_mobile_hidden {
     width: 0;
   }
   #navbar_component_mobile{
     width: 50%;
     .navbar_links{
-      border-right: 5px solid white
+      border-right: 5px solid white;
     }
   }
   #navbar_component_mobile, #navbar_component_mobile_hidden{
@@ -163,6 +160,9 @@
   }
   #navbar_component_mobile, #navbar_component_mobile_hidden{
     height: 100%;
+    .navbar_links{
+      border-right: 5px solid transparent;
+    }
     #fa_bars_menu{
       position: absolute;
       left: 10px;

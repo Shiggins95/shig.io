@@ -23,18 +23,6 @@
   left: calc(100% - 250px);
 }
 .content .content_wrapper .content_box {
-  -webkit-animation-name: appear_icons;
-  -moz-animation-name: appear_icons;
-  -o-animation-name: appear_icons;
-  animation-name: appear_icons;
-  -webkit-animation-duration: 1s;
-  -moz-animation-duration: 1s;
-  -o-animation-duration: 1s;
-  animation-duration: 1s;
-  -webkit-animation-iteration-count: 1;
-  -moz-animation-iteration-count: 1;
-  -o-animation-iteration-count: 1;
-  animation-iteration-count: 1;
   -webkit-border-radius: 5px;
   -moz-border-radius: 5px;
   border-radius: 5px;
@@ -82,6 +70,152 @@
   }
   to {
     bottom: 0;
+  }
+}
+@media (max-width: 1000px) {
+  .content {
+    width: 100vw;
+  }
+  .content .content_wrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+  }
+  .content .content_wrapper .content_box:nth-child(1) {
+    left: 0;
+  }
+  .content .content_wrapper .content_box:nth-child(2) {
+    left: 0;
+  }
+  .content .content_wrapper .content_box:nth-child(3) {
+    left: 0;
+  }
+  .content .content_wrapper .content_box {
+    margin: 0 5px;
+    position: relative;
+    height: 100px;
+  }
+  .content .content_wrapper .content_box h2 {
+    font-size: 1em;
+  }
+  .content .content_wrapper .content_box .icons .fa_icon {
+    -webkit-transform: 0.5;
+    -moz-transform: 0.5;
+    -ms-transform: 0.5;
+    -o-transform: 0.5;
+    transform: 0.5;
+  }
+}
+@media (max-width: 500px) {
+  .content {
+    width: 100vw;
+    position: relative;
+    bottom: 0;
+  }
+  .content .content_wrapper {
+    position: absolute;
+    top: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    justify-content: flex-start;
+    width: 100vw;
+  }
+  .content .content_wrapper .content_box {
+    background: #f9da90;
+    position: absolute;
+    width: 90vw;
+    height: 100px;
+    -webkit-border-radius: 0;
+    -moz-border-radius: 0;
+    border-radius: 0;
+    margin: 5px 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .content .content_wrapper .content_box .icons .fa_icon {
+    -webkit-transform: 0.5;
+    -moz-transform: 0.5;
+    -ms-transform: 0.5;
+    -o-transform: 0.5;
+    transform: 0.5;
+  }
+  .content #left_appear_1 {
+    position: absolute;
+    left: 0;
+    top: -30px;
+    -webkit-animation-name: appear_right_mobile_1;
+    -moz-animation-name: appear_right_mobile_1;
+    -o-animation-name: appear_right_mobile_1;
+    animation-name: appear_right_mobile_1;
+    -webkit-animation-duration: 2s;
+    -moz-animation-duration: 2s;
+    -o-animation-duration: 2s;
+    animation-duration: 2s;
+    -webkit-animation-iteration-count: 1;
+    -moz-animation-iteration-count: 1;
+    -o-animation-iteration-count: 1;
+    animation-iteration-count: 1;
+  }
+  .content #right_appear_1 {
+    position: absolute;
+    left: 0;
+    top: 80px;
+    -webkit-animation-name: appear_left_mobile;
+    -moz-animation-name: appear_left_mobile;
+    -o-animation-name: appear_left_mobile;
+    animation-name: appear_left_mobile;
+    -webkit-animation-duration: 2.5s;
+    -moz-animation-duration: 2.5s;
+    -o-animation-duration: 2.5s;
+    animation-duration: 2.5s;
+    -webkit-animation-iteration-count: 1;
+    -moz-animation-iteration-count: 1;
+    -o-animation-iteration-count: 1;
+    animation-iteration-count: 1;
+  }
+  .content #left_appear_2 {
+    -webkit-animation-name: appear_right_mobile_2;
+    -moz-animation-name: appear_right_mobile_2;
+    -o-animation-name: appear_right_mobile_2;
+    animation-name: appear_right_mobile_2;
+    -webkit-animation-duration: 2.5s;
+    -moz-animation-duration: 2.5s;
+    -o-animation-duration: 2.5s;
+    animation-duration: 2.5s;
+    -webkit-animation-iteration-count: 1;
+    -moz-animation-iteration-count: 1;
+    -o-animation-iteration-count: 1;
+    animation-iteration-count: 1;
+    top: 190px;
+  }
+}
+@keyframes appear_right_mobile_1 {
+  from {
+    left: -100vw;
+  }
+  to {
+    left: 0;
+  }
+}
+@keyframes appear_right_mobile_2 {
+  from {
+    left: -100vw;
+  }
+  to {
+    left: 0;
+  }
+}
+@keyframes appear_left_mobile {
+  from {
+    left: 100vw;
+  }
+  to {
+    left: 0;
   }
 }
 

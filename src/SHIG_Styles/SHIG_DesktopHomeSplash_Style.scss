@@ -81,6 +81,7 @@
         font-size: 5em;
         font-weight: 900;
         letter-spacing: 35px;
+        text-align: center;
       }
       h2{
         font-size: 1.8em;
@@ -88,6 +89,7 @@
         letter-spacing: 2px;
         color: $orange_yellow;
         opacity: .2;
+        text-align: center;
       }
     }
     .content{
@@ -199,6 +201,56 @@
   }
 }
 
+@media (max-width: 500px) {
+  #splash_page_container{
+    #tsparticles{
+      height: 70vh;
+      z-index: 1;
+    }
+    #home_top{
+      @include flexCenterCol;
+      justify-content: flex-end;
+      .header {
+        margin-top: 0;
+        position: absolute;
+        top: 50px;
+        @include flexCenterCol;
+        //border: 1px solid red;
+        h1 {
+          letter-spacing: 10px;
+          //border: 1px solid red;
+          text-align: center;
+          font-size: 5em;
+        }
+        h2{
+          font-size: 0.8em;
+          text-align: center;
+          opacity: .5;
+          padding: 0 10px;
+        }
+      }
+    }
+    #home_bottom{
+      top: 70vh;
+      height: 30vh;
+      .buttons{
+        @include flexCenterCol;
+        height: 100%;
+        .appear_center {
+          @include animation(appear_right, 0.5s, 1);
+        }
+        .appear_right{
+          @include animation(appear_left, 0.5s, 1);
+        }
+        button{
+          margin: 10px 0;
+          width: 100%;
+          position: relative;
+        }
+      }
+    }
+  }
+}
 @keyframes appear_center_mobile {
   from {
     top: 200%;

@@ -21,7 +21,7 @@
     }
     //@include flexCenterRow;
     .content_box {
-      @include animation(appear_icons, 1s, 1);
+      //@include animation(appear_icons, 1s, 1);
       @include borderRadius(5px);
       background: rgba(249, 218, 144, 0.75);
       color: $light_gray;
@@ -81,3 +81,108 @@
   }
 
 }
+
+@media (max-width: 1000px) {
+  .content{
+    width: 100vw;
+    .content_wrapper {
+      @include flexCenterRow;
+      .content_box:nth-child(1) {
+        left: 0;
+      }
+      .content_box:nth-child(2) {
+        left: 0;
+      }
+      .content_box:nth-child(3) {
+        left: 0;
+      }
+      .content_box{
+        margin: 0 5px;
+        position: relative;
+        height: 100px;
+        h2 {
+          font-size: 1em;
+        }
+        .icons{
+          .fa_icon {
+            @include transform(0.5);
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 500px) {
+  .content{
+    width: 100vw;
+    //top: 30vh;
+    position: relative;
+    bottom: 0;
+    .content_wrapper {
+      position: absolute;
+      top: 0;
+      @include flexCenterCol;
+      justify-content: flex-start;
+      width: 100vw;
+      .content_box{
+        background: $orange_yellow;
+        position: absolute;
+        width: 90vw;
+        height: 100px;
+        @include borderRadius(0);
+        margin: 5px 0;
+        @include flexCenterCol;
+        .icons{
+          .fa_icon {
+            @include transform(0.5);
+          }
+        }
+      }
+    }
+    #left_appear_1 {
+      position: absolute;
+      left: 0;
+      top: -30px;
+      @include animation(appear_right_mobile_1, 2s, 1);
+    }
+    #right_appear_1 {
+      position: absolute;
+      left: 0;
+      top: 80px;
+      @include animation(appear_left_mobile, 2.5s, 1);
+    }
+    #left_appear_2{
+      @include animation(appear_right_mobile_2, 2.5s, 1);
+      top: 190px;
+    }
+  }
+}
+
+@keyframes appear_right_mobile_1 {
+  from {
+    left: -100vw;
+  }
+  to {
+    left: 0;
+  }
+}
+
+@keyframes appear_right_mobile_2 {
+  from {
+    left: -100vw;
+  }
+  to {
+    left: 0;
+  }
+}
+
+@keyframes appear_left_mobile {
+  from {
+    left: 100vw;
+  }
+  to {
+    left: 0;
+  }
+}
+

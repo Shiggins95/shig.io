@@ -4,9 +4,9 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import '../../../SHIG_Styles/SHIG_Icon_Style.css';
 
 const IconComponent = (props) => {
-  const { displayClass, sizing, classNames, icons, label } = props;
+  const { displayClass, sizing, classNames, icons, label, id } = props;
   return (
-    <div className={`content_box ${displayClass}`}>
+    <div className={`content_box ${displayClass}`} id={id}>
       <h2>{label}</h2>
       <div className="icons">
         {icons.map((icon, index) => {

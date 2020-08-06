@@ -148,10 +148,6 @@
 }
 
 @media (max-width: 1400px) {
-  #navbar_component {
-    justify-content: center;
-  }
-
   #navbar_component_mobile_hidden {
     width: 0;
   }
@@ -219,6 +215,9 @@
 
   #navbar_component_mobile, #navbar_component_mobile_hidden {
     height: 100%;
+  }
+  #navbar_component_mobile .navbar_links, #navbar_component_mobile_hidden .navbar_links {
+    border-right: 5px solid transparent;
   }
   #navbar_component_mobile #fa_bars_menu, #navbar_component_mobile_hidden #fa_bars_menu {
     position: absolute;

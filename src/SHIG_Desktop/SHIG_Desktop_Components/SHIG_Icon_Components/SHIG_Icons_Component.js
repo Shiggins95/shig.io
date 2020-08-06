@@ -14,6 +14,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { _setIconsRendered } from '../../../SHIG_Redux/actions';
 import IconComponent from '../SHIG_Icon_Components/SHIG_Icon_Component';
 import { _setTimeoutTrigger } from '../../../SHIG_Helpers/animationHelper';
+import { _isMobile } from '../../../SHIG_Helpers/browserDetection';
 
 const IconsComponent = (props) => {
   const renderedState = useSelector((state) => state.renderer);
@@ -39,6 +40,8 @@ const IconsComponent = (props) => {
       // }, 750);
     }
   }, [dispatch, navRendered, mounts]);
+  const isMobile = _isMobile();
+  console.log('IMB', isMobile);
   const webDesignIcon = (
     <IconComponent
       sizing={['3x', '3x', '3x']}
@@ -46,6 +49,7 @@ const IconsComponent = (props) => {
       icons={[faTablet, faDesktop, faMobile]}
       displayClass={displayClass0}
       label="Web Design"
+      id={isMobile ? 'left_appear_1' : ''}
     />
   );
   const webHostingIcon = (
@@ -55,6 +59,7 @@ const IconsComponent = (props) => {
       classNames={['', 'people_arrows', '']}
       displayClass={displayClass1}
       label="Web Hosting"
+      id={isMobile ? 'right_appear_1' : ''}
     />
   );
   const consultationIcon = (
@@ -64,6 +69,7 @@ const IconsComponent = (props) => {
       classNames={['speech_bubble', '']}
       displayClass={displayClass2}
       label="Consultation"
+      id={isMobile ? 'left_appear_2' : ''}
     />
   );
 

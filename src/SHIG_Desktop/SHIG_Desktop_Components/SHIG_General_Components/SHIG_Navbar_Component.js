@@ -15,10 +15,16 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBars } from '@fortawesome/free-solid-svg-icons';
 
 const NavbarComponentDesktop = (props) => {
-  const isMobile = _isMobile();
+  let isMobile = _isMobile();
   const rendererState = useSelector(({ renderer }) => renderer);
   const rendered = rendererState.nav_bar;
   const splashRendered = rendererState.splash_page;
+  const { innerHeight, innerWidth } = window;
+  console.log(innerHeight);
+  // rough estimate of large tablet dimensions
+  if (innerHeight > 1000 && innerWidth > 1100 && innerHeight < 1100 && innerWidth < 1400) {
+    isMobile = false;
+  }
   const [show, setShow] = useState(false);
   const links = [
     {
