@@ -11,17 +11,19 @@
     height: 100%;
     position: relative;
     .content_box:nth-child(1) {
+      @include animation(appear_icons, 2s, 1);
       left: 0;
     }
     .content_box:nth-child(2) {
+      @include animation(appear_icons, 2.5s, 1);
       left: calc(50% - 125px);
     }
     .content_box:nth-child(3) {
+      @include animation(appear_icons, 3s, 1);
       left: calc(100% - 250px);
     }
     //@include flexCenterRow;
     .content_box {
-      //@include animation(appear_icons, 1s, 1);
       @include borderRadius(5px);
       background: rgba(249, 218, 144, 0.75);
       color: $light_gray;

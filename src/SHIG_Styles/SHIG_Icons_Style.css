@@ -14,12 +14,48 @@
   position: relative;
 }
 .content .content_wrapper .content_box:nth-child(1) {
+  -webkit-animation-name: appear_icons;
+  -moz-animation-name: appear_icons;
+  -o-animation-name: appear_icons;
+  animation-name: appear_icons;
+  -webkit-animation-duration: 2s;
+  -moz-animation-duration: 2s;
+  -o-animation-duration: 2s;
+  animation-duration: 2s;
+  -webkit-animation-iteration-count: 1;
+  -moz-animation-iteration-count: 1;
+  -o-animation-iteration-count: 1;
+  animation-iteration-count: 1;
   left: 0;
 }
 .content .content_wrapper .content_box:nth-child(2) {
+  -webkit-animation-name: appear_icons;
+  -moz-animation-name: appear_icons;
+  -o-animation-name: appear_icons;
+  animation-name: appear_icons;
+  -webkit-animation-duration: 2.5s;
+  -moz-animation-duration: 2.5s;
+  -o-animation-duration: 2.5s;
+  animation-duration: 2.5s;
+  -webkit-animation-iteration-count: 1;
+  -moz-animation-iteration-count: 1;
+  -o-animation-iteration-count: 1;
+  animation-iteration-count: 1;
   left: calc(50% - 125px);
 }
 .content .content_wrapper .content_box:nth-child(3) {
+  -webkit-animation-name: appear_icons;
+  -moz-animation-name: appear_icons;
+  -o-animation-name: appear_icons;
+  animation-name: appear_icons;
+  -webkit-animation-duration: 3s;
+  -moz-animation-duration: 3s;
+  -o-animation-duration: 3s;
+  animation-duration: 3s;
+  -webkit-animation-iteration-count: 1;
+  -moz-animation-iteration-count: 1;
+  -o-animation-iteration-count: 1;
+  animation-iteration-count: 1;
   left: calc(100% - 250px);
 }
 .content .content_wrapper .content_box {
