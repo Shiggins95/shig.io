@@ -65,7 +65,7 @@
     top: 0;
   }
   #quote_wizard .title {
-    margin-top: 25vh;
+    margin-top: 15vh;
   }
   #quote_wizard .navigation_buttons {
     bottom: 25vh;
@@ -81,6 +81,86 @@
   #quote_wizard input {
     margin-top: 20px;
     font-size: 0.7em;
+  }
+}
+@media (max-width: 800px) {
+  #quote_wizard {
+    width: 80vw;
+    left: 10vw;
+    height: 100vh;
+    top: 0;
+  }
+  #quote_wizard .title {
+    margin-top: 20px;
+    height: 25px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    align-items: flex-start;
+    font-size: 0.9em;
+  }
+  #quote_wizard .navigation_buttons {
+    bottom: 5vh;
+    height: 30px;
+    width: 80vw;
+    left: 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    justify-content: flex-end;
+  }
+  #quote_wizard .navigation_buttons .button {
+    width: 75px;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+    height: 20px;
+  }
+  #quote_wizard label {
+    font-size: 0.7em;
+  }
+  #quote_wizard input {
+    margin-top: 5px;
+    font-size: 0.7em;
+    width: 80vw;
+  }
+  #quote_wizard #contact_form {
+    align-content: center;
+  }
+  #quote_wizard #contact_form .input_container_small {
+    width: 100%;
+    margin: 50px 2.5% 0 2.5%;
+  }
+  #quote_wizard #contact_form .input_container_medium {
+    width: 100%;
+    margin: 50px 2.5% 0 2.5%;
+  }
+  #quote_wizard #contact_form .input_container_large {
+    width: 80vw;
+  }
+  #quote_wizard #contact_form .react-date-picker__wrapper {
+    border: none;
+  }
+  #quote_wizard #contact_form textarea {
+    width: 80vw;
+  }
+  #quote_wizard #contact_form #date_picker {
+    width: 80vw;
+  }
+  #quote_wizard #contact_form #date_picker input {
+    width: 93%;
+  }
+  #quote_wizard #contact_form #date_picker #fa_date_picker_icon {
+    width: 7%;
+  }
+  #quote_wizard #contact_form .preferred_checkbox {
+    width: 25px;
+    height: 25px;
+    position: absolute;
+    right: 15px;
   }
 }
 

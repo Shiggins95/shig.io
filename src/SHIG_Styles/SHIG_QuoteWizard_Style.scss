@@ -59,7 +59,7 @@
     height: 100vh;
     top: 0;
     .title {
-      margin-top: 25vh;
+      margin-top: 15vh;
     }
     .navigation_buttons{
       bottom: 25vh;
@@ -81,6 +81,77 @@
 
 }
 
-@media (max-width: 999px) {
+@media (max-width: 800px) {
+  #quote_wizard{
+    width: 80vw;
+    left: 10vw;
+    height: 100vh;
+    top: 0;
+    .title {
+      margin-top: 20px;
+      height: 25px;
+      width: 100%;
+      @include flexCenterCol;
+      align-items: flex-start;
+      font-size: 0.9em;
+    }
+    .navigation_buttons{
+      bottom: 5vh;
+      height: 30px;
+      width: 80vw;
+      left: 0;
+      @include flexCenterRow;
+      justify-content: flex-end;
+      .button{
+        width: 75px;
+        @include borderRadius(3px);
+        height: 20px;
+        //font-size: 3px;
 
+      }
+    }
+    label {
+      font-size: 0.7em;
+    }
+    input {
+      margin-top: 5px;
+      font-size: 0.7em;
+      width: 80vw;
+    }
+    #contact_form{
+      align-content: center;
+      .input_container_small{
+        width: 100%;
+        margin: 50px 2.5% 0 2.5%;
+      }
+      .input_container_medium{
+        width: 100%;
+        margin: 50px 2.5% 0 2.5%;
+      }
+      .input_container_large{
+        width: 80vw;
+      }
+      .react-date-picker__wrapper{
+        border: none;
+      }
+      textarea{
+        width: 80vw;
+      }
+      #date_picker{
+        width: 80vw;
+        input{
+          width: 93%;
+        }
+        #fa_date_picker_icon{
+          width: 7%;
+        }
+      }
+      .preferred_checkbox{
+        width: 25px;
+        height: 25px;
+        position: absolute;
+        right: 15px;
+      }
+    }
+  }
 }

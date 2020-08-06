@@ -33,7 +33,7 @@ export const stepOneInputs = [
 export const stepTwoInputs = [
   {
     id: 'contact_reason',
-    label: 'Project Type (e.g. small website for business or large website for multiple users)',
+    label: 'Project Description',
     type: 'text',
     size: 'medium',
     required: true
@@ -56,7 +56,7 @@ export const stepTwoInputs = [
 export const stepThreeInputs = [
   {
     id: 'no_of_pages',
-    label: 'number of web pages (leave blank if unsure)',
+    label: 'number of web pages',
     type: 'number',
     size: 'small'
   },

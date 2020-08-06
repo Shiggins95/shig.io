@@ -13,7 +13,7 @@ const PreferredCheckbox = (props) => {
   };
   return (
     <div className="preferred_checkbox">
-      <p>Preferred Contact</p>
+      <p>Preferred</p>
       <div
         className="checkbox"
         data-selected={preferredContact === props.id}

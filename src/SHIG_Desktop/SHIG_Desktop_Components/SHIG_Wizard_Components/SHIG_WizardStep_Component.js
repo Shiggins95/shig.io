@@ -191,7 +191,7 @@ const WizardStep = (props) => {
         {/* only show if not on first step to go backward */}
         {currentStep !== 0 ? (
           <button id="back_button" className="button" onClick={goLeft}>
-            Previous
+            Back
           </button>
         ) : null}
         {/* only show if not on last step to go forward */}
@@ -203,7 +203,7 @@ const WizardStep = (props) => {
         {/* only show if on last step to finalise */}
         {currentStep === 2 ? (
           <button id="confirm_button" className="button" onClick={handleSubmit}>
-            Make Enquiry
+            Enquire
           </button>
         ) : null}
       </div>
