@@ -128,5 +128,66 @@
     -webkit-appearance: none;
   }
 }
+@media screen and (orientation: landscape) and (max-height: 1024px) {
+  #contact_form_container {
+    height: 100vh;
+  }
+  #contact_form_container .lets_chat {
+    top: 5vh;
+  }
+  #contact_form_container .lets_chat h2 {
+    white-space: nowrap;
+  }
+  #contact_form_container #contact_form {
+    top: 20vh;
+    font-size: 0.8em;
+  }
+  #contact_form_container #contact_form .text_input_container {
+    margin: 10px 25px;
+  }
+}
+@media screen and (max-width: 1100px) and (max-height: 900px) and (orientation: landscape) {
+  #contact_form_container #contact_form {
+    top: 25vh;
+  }
+}
+@media screen and (max-width: 450px) and (max-height: 670px) {
+  #contact_form_container .lets_chat {
+    left: -20px;
+    top: -10px;
+    font-size: 0.8em;
+  }
+  #contact_form_container .lets_chat h1 {
+    top: 0;
+  }
+  #contact_form_container #contact_form {
+    top: 10vh;
+  }
+  #contact_form_container #contact_form .text_input_container input, #contact_form_container #contact_form .text_input_container label {
+    font-size: 0.7em;
+  }
+  #contact_form_container #contact_form .input_container_large {
+    margin-top: 25px;
+  }
+  #contact_form_container #contact_form .input_container_large label {
+    margin: 0;
+  }
+  #contact_form_container #contact_form .input_container_large textarea {
+    margin: 10px 0;
+  }
+  #contact_form_container #contact_form input[type=submit] {
+    height: 25px;
+    -webkit-border-radius: 2px;
+    -moz-border-radius: 2px;
+    border-radius: 2px;
+    font-size: 0.8em;
+    letter-spacing: 3px;
+  }
+}
+@media screen and (max-width: 350px) and (max-height: 600px) {
+  #contact_form_container .lets_chat {
+    display: none;
+  }
+}
 
 /*# sourceMappingURL=SHIG_ContactForm_Style.css.map */

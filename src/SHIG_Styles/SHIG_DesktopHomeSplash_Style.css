@@ -285,6 +285,20 @@
     opacity: 0.5;
     padding: 0 10px;
   }
+  #splash_page_container #home_top .content {
+    width: 90vw;
+  }
+  #splash_page_container #home_top .content .content_wrapper {
+    position: relative;
+    padding: 0 50px;
+    width: 100vw;
+  }
+  #splash_page_container #home_top .content .content_wrapper .content_box {
+    height: 75px;
+  }
+  #splash_page_container #home_top .content .content_wrapper .content_box h2 {
+    margin: 0;
+  }
   #splash_page_container #home_bottom {
     top: 70vh;
     height: 30vh;

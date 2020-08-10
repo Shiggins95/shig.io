@@ -11,15 +11,15 @@
     height: 100%;
     position: relative;
     .content_box:nth-child(1) {
-      @include animation(appear_icons, 2s, 1);
+      @include animation(appear_icons, 1s, 1);
       left: 0;
     }
     .content_box:nth-child(2) {
-      @include animation(appear_icons, 2.5s, 1);
+      @include animation(appear_icons, 1.5s, 1);
       left: calc(50% - 125px);
     }
     .content_box:nth-child(3) {
-      @include animation(appear_icons, 3s, 1);
+      @include animation(appear_icons, 2s, 1);
       left: calc(100% - 250px);
     }
     //@include flexCenterRow;
@@ -62,16 +62,6 @@
       }
     }
   }
-
-  //.hidden{
-  //  bottom: -200px;
-  //}
-  //
-  //.display{
-  //  bottom: 0;
-  //}
-
-  //background: red;
 }
 
 @keyframes appear_icons {
@@ -145,13 +135,13 @@
     #left_appear_1 {
       position: absolute;
       left: 0;
-      top: -30px;
+      top: 30px;
       @include animation(appear_right_mobile_1, 2s, 1);
     }
     #right_appear_1 {
       position: absolute;
       left: 0;
-      top: 80px;
+      top: 110px;
       @include animation(appear_left_mobile, 2.5s, 1);
     }
     #left_appear_2{

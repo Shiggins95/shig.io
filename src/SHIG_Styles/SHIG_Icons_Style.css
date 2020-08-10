@@ -18,10 +18,10 @@
   -moz-animation-name: appear_icons;
   -o-animation-name: appear_icons;
   animation-name: appear_icons;
-  -webkit-animation-duration: 2s;
-  -moz-animation-duration: 2s;
-  -o-animation-duration: 2s;
-  animation-duration: 2s;
+  -webkit-animation-duration: 1s;
+  -moz-animation-duration: 1s;
+  -o-animation-duration: 1s;
+  animation-duration: 1s;
   -webkit-animation-iteration-count: 1;
   -moz-animation-iteration-count: 1;
   -o-animation-iteration-count: 1;
@@ -33,10 +33,10 @@
   -moz-animation-name: appear_icons;
   -o-animation-name: appear_icons;
   animation-name: appear_icons;
-  -webkit-animation-duration: 2.5s;
-  -moz-animation-duration: 2.5s;
-  -o-animation-duration: 2.5s;
-  animation-duration: 2.5s;
+  -webkit-animation-duration: 1.5s;
+  -moz-animation-duration: 1.5s;
+  -o-animation-duration: 1.5s;
+  animation-duration: 1.5s;
   -webkit-animation-iteration-count: 1;
   -moz-animation-iteration-count: 1;
   -o-animation-iteration-count: 1;
@@ -48,10 +48,10 @@
   -moz-animation-name: appear_icons;
   -o-animation-name: appear_icons;
   animation-name: appear_icons;
-  -webkit-animation-duration: 3s;
-  -moz-animation-duration: 3s;
-  -o-animation-duration: 3s;
-  animation-duration: 3s;
+  -webkit-animation-duration: 2s;
+  -moz-animation-duration: 2s;
+  -o-animation-duration: 2s;
+  animation-duration: 2s;
   -webkit-animation-iteration-count: 1;
   -moz-animation-iteration-count: 1;
   -o-animation-iteration-count: 1;
@@ -183,7 +183,7 @@
   .content #left_appear_1 {
     position: absolute;
     left: 0;
-    top: -30px;
+    top: 30px;
     -webkit-animation-name: appear_right_mobile_1;
     -moz-animation-name: appear_right_mobile_1;
     -o-animation-name: appear_right_mobile_1;
@@ -200,7 +200,7 @@
   .content #right_appear_1 {
     position: absolute;
     left: 0;
-    top: 80px;
+    top: 110px;
     -webkit-animation-name: appear_left_mobile;
     -moz-animation-name: appear_left_mobile;
     -o-animation-name: appear_left_mobile;

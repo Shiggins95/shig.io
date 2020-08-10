@@ -229,6 +229,21 @@
           padding: 0 10px;
         }
       }
+      .content{
+        width: 90vw;
+        .content_wrapper{
+          position: relative;
+          padding: 0 50px;
+          width: 100vw;
+          .content_box{
+            height: 75px;
+            h2{
+              margin: 0;
+            }
+            //width: 30%;
+          }
+        }
+      }
     }
     #home_bottom{
       top: 70vh;
