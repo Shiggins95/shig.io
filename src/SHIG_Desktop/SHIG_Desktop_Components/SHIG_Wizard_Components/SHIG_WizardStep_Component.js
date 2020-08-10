@@ -84,7 +84,7 @@ const WizardStep = (props) => {
       domain_purchased,
       preferred_contact
     };
-    _sendEmail('template_two', params);
+    // _sendEmail('template_two', params);
 
     dispatch(
       _setWizardError({
@@ -138,8 +138,8 @@ const WizardStep = (props) => {
     dispatch(_setWizardDirection('left'));
   };
   const goRight = () => {
-    // const validation = validateFields(inputMapping[currentStep]);
-    const validation = -1;
+    const validation = validateFields(inputMapping[currentStep]);
+    // const validation = -1;
     console.log(validation);
     const errorMapping = {
       0: { errorTitle: 'Missing Values', errorMessage: "Please enter all values marked with '*'" },

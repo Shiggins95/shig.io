@@ -35,8 +35,8 @@
     @include flexCenterRow;
     width: 100%;
     div{
+      @include flexCenterRow;
       width: calc(100% / 7 - 10px);
-      //background: rgba(255,255,255,0.05);
       background: $orange_yellow;
       color: $light_gray;
       font-weight: 400;
@@ -74,6 +74,24 @@
         height: 20px;
         font-size: 0.8em;
         letter-spacing: 1px;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .days{
+    ._days{
+      div{
+        width: calc(100% / 7);
+      }
+      div[data-selected="true"] {
+        border: 1px solid $orange_yellow;
+      }
+    }
+    .day_labels{
+      div{
+        width: calc(100% / 7);
       }
     }
   }

@@ -51,6 +51,10 @@
   width: 100%;
 }
 .days .day_labels div {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
   width: calc(100% / 7 - 10px);
   background: #f9da90;
   color: #494949;
@@ -92,6 +96,17 @@
     height: 20px;
     font-size: 0.8em;
     letter-spacing: 1px;
+  }
+}
+@media screen and (max-width: 500px) {
+  .days ._days div {
+    width: calc(100% / 7);
+  }
+  .days ._days div[data-selected=true] {
+    border: 1px solid #f9da90;
+  }
+  .days .day_labels div {
+    width: calc(100% / 7);
   }
 }
 

@@ -91,3 +91,15 @@
     }
   }
 }
+
+@media screen and (max-width: 500px) {
+  #date_picker {
+    #date_picker_container {
+      position: absolute;
+      width: 80vw;
+      height: 300px;
+      left: 0;
+      top: -50vh;
+    }
+  }
+}

@@ -26,6 +26,7 @@ const datePickerReducer = (state = startingState, action) => {
       return {
         days: [],
         open: false,
+        currentView: 'days',
         monthDate: moment(),
         currentDate: moment()
       };

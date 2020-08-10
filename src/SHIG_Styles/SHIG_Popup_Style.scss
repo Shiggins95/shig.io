@@ -1,6 +1,7 @@
 @import "mixins";
 @import "variables";
 #popup_container{
+  position: absolute;
   @include flexCenterCol;
   width: 100%;
   height: 100%;

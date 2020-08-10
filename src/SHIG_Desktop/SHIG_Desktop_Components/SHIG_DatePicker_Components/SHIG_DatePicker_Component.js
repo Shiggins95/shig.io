@@ -13,6 +13,7 @@ import {
   _setDatePickerView,
   _toggleDatePicker
 } from '../../../SHIG_Redux/actions/datePickerActions';
+import { _isMobile } from '../../../SHIG_Helpers/browserDetection';
 
 const DatePicker = ({ customId }) => {
   const dispatch = useDispatch();
@@ -52,15 +53,17 @@ const DatePicker = ({ customId }) => {
   const openDatePicker = (e) => {
     const clientY = e.clientY;
     const clientX = e.clientX;
-    let actualX = clientX;
-    let actualY = clientY;
-    if (clientY >= 500) {
-      actualY -= 250;
-      setY(actualY);
-    }
-    if (clientX <= 300) {
-      actualX += 300;
-      setX(actualX);
+    if (!_isMobile()) {
+      let actualX = clientX;
+      let actualY = clientY;
+      if (clientY >= 500) {
+        actualY -= 250;
+        setY(actualY);
+      }
+      if (clientX <= 300) {
+        actualX += 300;
+        setX(actualX);
+      }
     }
     dispatch(_toggleDatePicker());
   };
@@ -73,7 +76,7 @@ const DatePicker = ({ customId }) => {
       <input type="text" value={currentDate.format('DD/MM/YYYY')} onChange={() => {}} />
       <FontAwesomeIcon icon={faCalendar} id="fa_date_picker_icon" onClick={openDatePicker} />
       {open ? (
-        <div id="date_picker_container" style={x || y ? style : {}}>
+        <div id="date_picker_container" style={x !== 50 || y !== 50 ? style : {}}>
           <div id="date_picker_calendar_container">
             <div className="header">
               <button data-nav-direction="-1" onClick={navigate} id="prev_month">

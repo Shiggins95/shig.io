@@ -45,3 +45,29 @@
     }
   }
 }
+
+@media screen and (max-width: 500px) {
+  .wizard_step{
+    #popup_container{
+      .popup_content {
+        text-align: center;
+        width: 70vw;
+        height: 30vh;
+        top: 25vh;
+        .header{
+          h1 {
+            font-size: 1.2em;
+          }
+        }
+        .message {
+          p {
+            font-size: 0.8em;
+          }
+        }
+        .close_container{
+          font-size: 0.7em;
+        }
+      }
+    }
+  }
+}

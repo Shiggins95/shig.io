@@ -77,6 +77,8 @@ const Days = ({ customId }) => {
     dispatch(_setWizardField(currentStep, customId, date.format('YYYY-MM-DD')));
   };
 
+  debugger;
+
   const divs = [];
   // check if month date exists else use todays date
   const _startingDate = moment(monthDate).startOf('month');
