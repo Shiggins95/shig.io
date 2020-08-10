@@ -8,7 +8,7 @@ export const _sendEmail = async (template, params) => {
 };
 
 export const _sendEmailLocal = async (params) => {
-  const response = await fetch('http://localhost:8080/api/email/send_email', {
+  const response = await fetch('http://shig.io:8080/api/email/send_email', {
     body: JSON.stringify(params),
     method: 'POST',
     headers: {

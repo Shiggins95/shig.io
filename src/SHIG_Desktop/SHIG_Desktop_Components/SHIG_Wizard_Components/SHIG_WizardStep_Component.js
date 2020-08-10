@@ -84,7 +84,7 @@ const WizardStep = (props) => {
       domain_purchased,
       preferred_contact
     };
-    _sendEmailLocal(params);
+    _sendEmail(params);
 
     dispatch(
       _setWizardError({
