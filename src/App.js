@@ -44,6 +44,13 @@ function App() {
             path="/services"
             component={!isMobile ? DesktopServicesContainer : DesktopServicesContainer}
           />
+          <Route
+            path="/redirect_stephen"
+            component={() => {
+              window.location.href = 'http://www.stephen-higgins.co.uk';
+              return null;
+            }}
+          />
         </Switch>
       </Router>
     </div>

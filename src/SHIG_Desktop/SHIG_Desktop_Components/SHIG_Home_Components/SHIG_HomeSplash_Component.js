@@ -32,6 +32,18 @@ const SplashPage = (props) => {
     }
   });
 
+  const handleClick = (event) => {
+    debugger;
+    const { id } = event.target;
+    if (id === 'enquiry') {
+      window.location.href = '/contact';
+    } else if (id === 'quote') {
+      window.location.href = '/quote';
+    } else if (id === 'previous_work') {
+      window.location = '/redirect_stephen';
+    }
+  };
+
   return (
     <div id="splash_page_container">
       <Particles id="tsparticles" options={particleOptions} />
@@ -47,9 +59,15 @@ const SplashPage = (props) => {
       <div id="home_bottom">
         {buttonsRendered ? (
           <div className="buttons">
-            <button className="appear_left">Make Custom Enquiry</button>
-            <button className="appear_center">Get Quote</button>
-            <button className="appear_right">Previous Work</button>
+            <button className="appear_left" id="enquiry" onClick={handleClick}>
+              Make Custom Enquiry
+            </button>
+            <button className="appear_center" id="quote" onClick={handleClick}>
+              Get Quote
+            </button>
+            <button className="appear_right" id="previous_work" onClick={handleClick}>
+              Previous Work
+            </button>
           </div>
         ) : null}
       </div>
